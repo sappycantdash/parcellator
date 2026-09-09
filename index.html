@@ -1,504 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PARCELLATOR — Smart Parcel Monitoring System</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PARCELLATOR</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- Mobile sidebar overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-<div class="app-shell">
-
-  <!-- ============ SIDEBAR ============ -->
-  <aside class="sidebar" id="sidebar">
-
-    <div class="brand">
-      <div class="logo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/></svg>
-      </div>
-      <div class="brand-text">
-        <h1>PARCEL<span>LATOR</span></h1>
-        <p>Smart Parcel Monitoring System</p>
-      </div>
-      <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
-    </div>
-
-    <nav class="nav" id="mainNav">
-      <button class="nav-item active" data-page="dashboard">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
-        <span>Dashboard</span>
-      </button>
-      <button class="nav-item" data-page="parcels">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>
-        <span>Parcels</span>
-      </button>
-      <button class="nav-item" data-page="live">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"/><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M4.9 4.9l1.5 1.5M19.1 4.9l-1.5 1.5M4.9 19.1l1.5-1.5M19.1 19.1l-1.5-1.5"/></svg>
-        <span>Live Monitoring</span>
-      </button>
-      <button class="nav-item" data-page="logs">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
-        <span>Access Logs</span>
-      </button>
-      <button class="nav-item" data-page="alerts">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
-        <span>Alerts</span>
-        <span class="nav-badge" id="navAlertBadge">2</span>
-      </button>
-      <button class="nav-item" data-page="analytics">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12.5" y="8" width="3" height="10"/><rect x="18" y="5" width="3" height="13"/></svg>
-        <span>Analytics</span>
-      </button>
-      <button class="nav-item" data-page="users">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        <span>Users</span>
-      </button>
-      <button class="nav-item" data-page="settings">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
-        <span>System Settings</span>
-      </button>
-    </nav>
-
-    <div class="sidebar-footer">
-      <div class="sidebar-footer-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/></svg>
-      </div>
-      <p>Safe Parcels.<br>Secure Tomorrow.</p>
-    </div>
-
-  </aside>
-
-  <!-- ============ MAIN ============ -->
-  <div class="main-col">
-
-    <!-- HEADER -->
+    <!-- Header -->
     <header class="header">
-      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </button>
 
-      <div class="header-title">
-        <h2 id="pageTitle">Dashboard</h2>
-      </div>
+        <div class="brand">
 
-      <div class="header-right">
-        <div class="wifi-indicator" title="ESP-01 Wi-Fi: Online">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5a11 11 0 0 1 14 0"/><path d="M8.3 15.9a6.5 6.5 0 0 1 7.4 0"/><path d="M11.5 19.2a2 2 0 0 1 1 0"/></svg>
+            <div class="logo">
+                P
+            </div>
+
+            <div class="brand-text">
+                <h1>PARCELLATOR</h1>
+                <p>Smart Parcel Monitoring System</p>
+            </div>
+
         </div>
 
+
+        <!-- System Status -->
         <div class="system-status">
-          <span class="status-dot"></span>
-          <span>System Online</span>
+
+            <span class="status-dot"></span>
+
+            <div>
+                <strong>System Online</strong>
+                <small>Ready</small>
+            </div>
+
         </div>
 
-        <button class="icon-btn" id="bellBtn" title="Alerts">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
-          <span class="icon-badge" id="bellBadge">2</span>
-        </button>
-
-        <div class="admin-menu">
-          <button class="admin-pill" id="adminBtn">
-            <span class="avatar">A</span>
-            <span class="admin-name">Admin</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="chev"><path d="m6 9 6 6 6-6"/></svg>
-          </button>
-          <div class="admin-dropdown" id="adminDropdown">
-            <button data-page="settings">Profile Settings</button>
-            <button id="logoutBtn">Log Out</button>
-          </div>
-        </div>
-      </div>
     </header>
 
-    <!-- PAGE CONTENT -->
-    <main class="content" id="content">
 
-      <!-- ================= DASHBOARD ================= -->
-      <section class="page active" data-page="dashboard">
+    <!-- Main Content -->
+    <main class="container">
 
-        <div class="welcome-bar">
-          <div>
-            <p class="eyebrow">Dashboard</p>
-            <h2 id="welcomeHeading">Welcome, Admin!</h2>
-            <p class="muted">Here's what's happening with your PARCELLATOR system today.</p>
-          </div>
-          <div class="datetime-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            <div>
-              <strong id="headerDate">—</strong>
-              <span id="headerTime">—</span>
-            </div>
-          </div>
-        </div>
 
-        <section class="summary-grid" id="summaryGrid"></section>
+        <!-- Dashboard Title -->
+        <section class="welcome">
 
-        <section class="dash-grid">
+            <p class="label">
+                DASHBOARD
+            </p>
 
-          <!-- Current Parcel -->
-          <div class="panel parcel-live-panel">
-            <div class="panel-head">
-              <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/></svg> Current Parcel <span class="sub">(Live Weight)</span></h3>
-              <span class="live-pill"><span class="dot"></span> Live</span>
-            </div>
-            <div class="parcel-live-body">
-              <div class="parcel-live-info">
-                <div class="info-row"><span>Parcel ID</span><strong id="cpId">—</strong></div>
-                <div class="weight-block">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
-                  <div>
-                    <span class="weight-label">Weight</span>
-                    <span class="weight-value"><span id="cpWeight">0.00</span> kg</span>
-                  </div>
-                </div>
-                <div class="progress-track">
-                  <div class="progress-fill" id="cpWeightBar"></div>
-                </div>
-                <div class="progress-scale"><span>0 kg</span><span id="cpMax">10 kg</span></div>
-                <div class="info-row"><span>Recipient</span><strong id="cpRecipient">—</strong></div>
-                <div class="info-row"><span>RFID</span><strong id="cpRfid">—</strong></div>
-                <span class="status-chip detected" id="cpStatus">PARCEL DETECTED</span>
-              </div>
-              <div class="parcel-illustration">
-                <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M50 8 12 26v48l38 18 38-18V26L50 8Z"/><path d="M12 26l38 18 38-18M50 44v52M31 17l38 18"/></svg>
-              </div>
-            </div>
-          </div>
+            <h2>
+                Welcome to PARCELLATOR
+            </h2>
 
-          <!-- Box Status -->
-          <div class="panel box-status-panel">
-            <div class="panel-head">
-              <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 2v20"/></svg> Box Status</h3>
-            </div>
-            <div class="box-visual" id="boxVisual">
-              <svg viewBox="0 0 120 140" fill="none" stroke="currentColor" stroke-width="3">
-                <rect x="10" y="10" width="70" height="120" rx="6"/>
-                <rect x="20" y="20" width="50" height="100" rx="3" opacity="0.35"/>
-                <circle id="lockGlyphCircle" cx="98" cy="70" r="16" stroke-width="3"/>
-                <path id="lockGlyphIcon" d="M92 70a6 6 0 0 1 12 0v5h-12v-5Zm-2 5h16v10H90V75Z"/>
-              </svg>
-            </div>
-            <div class="box-status-rows">
-              <div class="box-status-row">
-                <span class="label">Door (Reed Switch)</span>
-                <span class="status-chip ok" id="doorStatus">CLOSED</span>
-              </div>
-              <div class="box-status-row">
-                <span class="label">Solenoid Lock</span>
-                <span class="status-chip ok" id="lockStatus">LOCKED</span>
-              </div>
-            </div>
-            <p class="box-note" id="boxNote">Door is securely closed.</p>
-          </div>
-
-          <!-- System Status -->
-          <div class="panel system-status-panel">
-            <div class="panel-head">
-              <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg> System Status</h3>
-            </div>
-            <div class="device-mini-list" id="deviceMiniList"></div>
-          </div>
-
-          <!-- Recent Parcels -->
-          <div class="panel table-panel span-2">
-            <div class="panel-head">
-              <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/></svg> Recent Parcels</h3>
-              <button class="link-btn" data-goto="parcels">View all
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-              </button>
-            </div>
-            <div class="table-scroll">
-              <table class="data-table" id="recentParcelsTable"></table>
-            </div>
-          </div>
-
-          <!-- Parcel Activity Chart -->
-          <div class="panel chart-panel">
-            <div class="panel-head">
-              <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12.5" y="8" width="3" height="10"/><rect x="18" y="5" width="3" height="13"/></svg> Parcel Activity</h3>
-              <span class="tag-muted">Last 7 days</span>
-            </div>
-            <div class="chart-wrap"><canvas id="dashActivityChart"></canvas></div>
-            <button class="ghost-btn full" data-goto="analytics">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12.5" y="8" width="3" height="10"/><rect x="18" y="5" width="3" height="13"/></svg>
-              View Analytics
-            </button>
-          </div>
-
-          <!-- Recent Alerts -->
-          <div class="panel alerts-panel">
-            <div class="panel-head">
-              <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/></svg> Recent Alerts</h3>
-              <button class="link-btn" data-goto="alerts">View all
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-              </button>
-            </div>
-            <div class="mini-alert-list" id="dashAlertList"></div>
-          </div>
+            <p class="description">
+                Monitor parcel activity and system status.
+            </p>
 
         </section>
-      </section>
 
-      <!-- ================= PARCELS ================= -->
-      <section class="page" data-page="parcels">
-        <div class="page-header-row">
-          <div>
-            <p class="eyebrow">Parcel Management</p>
-            <h2>Parcels</h2>
-            <p class="muted">Track every parcel from detection to claim.</p>
-          </div>
-        </div>
 
-        <section class="summary-grid compact" id="parcelsSummary"></section>
+        <!-- Summary -->
+        <section class="summary">
 
-        <div class="panel">
-          <div class="table-toolbar">
-            <div class="search-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-              <input type="text" id="parcelSearch" placeholder="Search by ID, recipient, or RFID…">
+
+            <!-- Parcel Counter -->
+            <div class="card parcel-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <p class="card-label">
+                            TOTAL PARCELS
+                        </p>
+
+                        <h3>
+                            024
+                        </h3>
+                    </div>
+
+                    <div class="card-icon parcel-icon">
+                        📦
+                    </div>
+
+                </div>
+
+                <p class="card-note">
+                    Parcels processed
+                </p>
+
             </div>
-            <select id="parcelStatusFilter" class="select-input">
-              <option value="all">All Statuses</option>
-              <option value="Stored">Stored</option>
-              <option value="Claimed">Claimed</option>
-              <option value="Pending">Pending</option>
-              <option value="Detected">Detected</option>
-              <option value="Released">Released</option>
-            </select>
-          </div>
-          <div class="table-scroll">
-            <table class="data-table" id="parcelsTable"></table>
-          </div>
-        </div>
-      </section>
 
-      <!-- ================= LIVE MONITORING ================= -->
-      <section class="page" data-page="live">
-        <div class="page-header-row">
-          <div>
-            <p class="eyebrow">Real-Time</p>
-            <h2>Live Monitoring</h2>
-            <p class="muted">Live sensor and device telemetry from the parcel box.</p>
-          </div>
-          <span class="live-pill lg"><span class="dot"></span> Streaming</span>
-        </div>
 
-        <section class="live-grid" id="liveGrid"></section>
+            <!-- System Status -->
+            <div class="card status-card">
 
-        <div class="panel">
-          <div class="panel-head">
-            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg> Real-Time Event Feed</h3>
-            <span class="tag-muted" id="feedCount">0 events</span>
-          </div>
-          <div class="feed-list" id="liveFeed"></div>
-        </div>
-      </section>
+                <div class="card-header">
 
-      <!-- ================= ACCESS LOGS ================= -->
-      <section class="page" data-page="logs">
-        <div class="page-header-row">
-          <div>
-            <p class="eyebrow">Security</p>
-            <h2>Access Logs</h2>
-            <p class="muted">Every RFID scan and door/lock event, recorded.</p>
-          </div>
-        </div>
+                    <div>
+                        <p class="card-label">
+                            SYSTEM STATUS
+                        </p>
 
-        <div class="panel">
-          <div class="table-toolbar">
-            <div class="search-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-              <input type="text" id="logSearch" placeholder="Search by RFID or user…">
+                        <h3 class="online">
+                            ONLINE
+                        </h3>
+                    </div>
+
+                    <div class="card-icon status-icon">
+                        ✓
+                    </div>
+
+                </div>
+
+                <p class="card-note">
+                    System is operating normally
+                </p>
+
             </div>
-            <select id="logResultFilter" class="select-input">
-              <option value="all">All Results</option>
-              <option value="success">Successful</option>
-              <option value="failed">Failed</option>
-            </select>
-          </div>
-          <div class="table-scroll">
-            <table class="data-table" id="logsTable"></table>
-          </div>
-        </div>
-      </section>
 
-      <!-- ================= ALERTS ================= -->
-      <section class="page" data-page="alerts">
-        <div class="page-header-row">
-          <div>
-            <p class="eyebrow">Notifications</p>
-            <h2>Alerts</h2>
-            <p class="muted">Issues that need your attention.</p>
-          </div>
-        </div>
 
-        <div class="table-toolbar no-panel">
-          <select id="alertSeverityFilter" class="select-input">
-            <option value="all">All Severities</option>
-            <option value="Critical">Critical</option>
-            <option value="Warning">Warning</option>
-            <option value="Information">Information</option>
-            <option value="Resolved">Resolved</option>
-          </select>
-        </div>
-
-        <div class="alerts-full-list" id="alertsFullList"></div>
-      </section>
-
-      <!-- ================= ANALYTICS ================= -->
-      <section class="page" data-page="analytics">
-        <div class="page-header-row">
-          <div>
-            <p class="eyebrow">Insights</p>
-            <h2>Analytics</h2>
-            <p class="muted">System performance and parcel trends over time.</p>
-          </div>
-        </div>
-
-        <section class="analytics-grid">
-          <div class="panel">
-            <div class="panel-head"><h3>Parcels Received vs Claimed</h3></div>
-            <div class="chart-wrap"><canvas id="chartReceivedClaimed"></canvas></div>
-          </div>
-          <div class="panel">
-            <div class="panel-head"><h3>Stored vs Claimed</h3></div>
-            <div class="chart-wrap small"><canvas id="chartStoredClaimed"></canvas></div>
-          </div>
-          <div class="panel">
-            <div class="panel-head"><h3>Access Attempts</h3></div>
-            <div class="chart-wrap"><canvas id="chartAccessAttempts"></canvas></div>
-          </div>
-          <div class="panel">
-            <div class="panel-head"><h3>Device Uptime (7d)</h3></div>
-            <div class="chart-wrap"><canvas id="chartUptime"></canvas></div>
-          </div>
-          <div class="panel span-2">
-            <div class="panel-head"><h3>Parcel Weight Distribution</h3></div>
-            <div class="chart-wrap"><canvas id="chartWeightDist"></canvas></div>
-          </div>
         </section>
-      </section>
 
-      <!-- ================= USERS ================= -->
-      <section class="page" data-page="users">
-        <div class="page-header-row">
-          <div>
-            <p class="eyebrow">Accounts</p>
-            <h2>Users</h2>
-            <p class="muted">Everyone registered to claim parcels from this system.</p>
-          </div>
-          <button class="primary-btn" id="addUserBtn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-            Add User
-          </button>
-        </div>
 
-        <div class="panel">
-          <div class="table-toolbar">
-            <div class="search-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-              <input type="text" id="userSearch" placeholder="Search by name or RFID…">
+        <!-- Recent Activities -->
+        <section class="activity-card">
+
+            <div class="activity-header">
+
+                <div>
+
+                    <p class="label">
+                        ACTIVITY LOG
+                    </p>
+
+                    <h2>
+                        Recent Activities
+                    </h2>
+
+                    <p class="description">
+                        Latest parcel events recorded by the system.
+                    </p>
+
+                </div>
+
             </div>
-            <select id="userStatusFilter" class="select-input">
-              <option value="all">All Status</option>
-              <option value="Active">Active</option>
-              <option value="Inactive">Inactive</option>
-            </select>
-          </div>
-          <div class="table-scroll">
-            <table class="data-table" id="usersTable"></table>
-          </div>
-        </div>
-      </section>
 
-      <!-- ================= SETTINGS ================= -->
-      <section class="page" data-page="settings">
-        <div class="page-header-row">
-          <div>
-            <p class="eyebrow">Configuration</p>
-            <h2>System Settings</h2>
-            <p class="muted">Configure PARCELLATOR behavior and connected hardware.</p>
-          </div>
-        </div>
 
-        <form id="settingsForm" class="settings-grid">
+            <!-- Activity List -->
+            <div class="activity-list">
 
-          <div class="panel">
-            <div class="panel-head"><h3>General</h3></div>
-            <div class="form-field"><label>System Name</label><input type="text" value="PARCELLATOR"></div>
-            <div class="form-field"><label>Admin Name</label><input type="text" value="Admin"></div>
-            <div class="form-field"><label>Date &amp; Time Format</label>
-              <select class="select-input"><option>12-hour (PM/AM)</option><option>24-hour</option></select>
+
+                <!-- Opened -->
+                <div class="activity-item">
+
+                    <div class="activity-icon opened">
+                        ↗
+                    </div>
+
+                    <div class="activity-info">
+
+                        <div class="activity-title">
+
+                            <strong>
+                                Parcel Opened
+                            </strong>
+
+                            <span class="tag opened-tag">
+                                OPENED
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Parcel compartment opened
+                        </p>
+
+                    </div>
+
+                    <div class="activity-time">
+
+                        <strong>
+                            09:42 PM
+                        </strong>
+
+                        <span>
+                            September 9, 2026
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Closed -->
+                <div class="activity-item">
+
+                    <div class="activity-icon closed">
+                        ✓
+                    </div>
+
+                    <div class="activity-info">
+
+                        <div class="activity-title">
+
+                            <strong>
+                                Parcel Closed
+                            </strong>
+
+                            <span class="tag closed-tag">
+                                CLOSED
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Parcel compartment closed securely
+                        </p>
+
+                    </div>
+
+                    <div class="activity-time">
+
+                        <strong>
+                            09:38 PM
+                        </strong>
+
+                        <span>
+                            September 9, 2026
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Opened -->
+                <div class="activity-item">
+
+                    <div class="activity-icon opened">
+                        ↗
+                    </div>
+
+                    <div class="activity-info">
+
+                        <div class="activity-title">
+
+                            <strong>
+                                Parcel Opened
+                            </strong>
+
+                            <span class="tag opened-tag">
+                                OPENED
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Parcel compartment opened
+                        </p>
+
+                    </div>
+
+                    <div class="activity-time">
+
+                        <strong>
+                            09:31 PM
+                        </strong>
+
+                        <span>
+                            September 9, 2026
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Closed -->
+                <div class="activity-item">
+
+                    <div class="activity-icon closed">
+                        ✓
+                    </div>
+
+                    <div class="activity-info">
+
+                        <div class="activity-title">
+
+                            <strong>
+                                Parcel Closed
+                            </strong>
+
+                            <span class="tag closed-tag">
+                                CLOSED
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Parcel compartment closed securely
+                        </p>
+
+                    </div>
+
+                    <div class="activity-time">
+
+                        <strong>
+                            09:27 PM
+                        </strong>
+
+                        <span>
+                            September 9, 2026
+                        </span>
+
+                    </div>
+
+                </div>
+
+
             </div>
-          </div>
 
-          <div class="panel">
-            <div class="panel-head"><h3>Parcel Settings</h3></div>
-            <div class="form-field"><label>Maximum Parcel Weight (kg)</label><input type="number" value="10"></div>
-            <div class="form-field"><label>Storage Capacity (parcels)</label><input type="number" value="20"></div>
-            <div class="toggle-row"><label>Auto-Lock After Detection</label><input type="checkbox" class="switch" checked></div>
-          </div>
+        </section>
 
-          <div class="panel">
-            <div class="panel-head"><h3>Alert Settings</h3></div>
-            <div class="toggle-row"><label>Unauthorized Access Alerts</label><input type="checkbox" class="switch" checked></div>
-            <div class="toggle-row"><label>Door-Open Alerts</label><input type="checkbox" class="switch" checked></div>
-            <div class="toggle-row"><label>Device-Offline Alerts</label><input type="checkbox" class="switch" checked></div>
-            <div class="toggle-row"><label>Abnormal Weight Alerts</label><input type="checkbox" class="switch"></div>
-          </div>
 
-          <div class="panel">
-            <div class="panel-head"><h3>Device Settings</h3></div>
-            <div class="form-field"><label>ESP-01 Connection</label>
-              <select class="select-input"><option>Wi-Fi (Station Mode)</option><option>Access Point Mode</option></select>
-            </div>
-            <div class="form-field"><label>Arduino Baud Rate</label>
-              <select class="select-input"><option>9600</option><option>115200</option></select>
-            </div>
-            <div class="form-field"><label>RFID Configuration</label>
-              <select class="select-input"><option>RC522 — SPI Mode</option></select>
-            </div>
-          </div>
+        <!-- Footer -->
+        <footer>
 
-          <div class="settings-actions span-2">
-            <button type="submit" class="primary-btn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
-              Save Settings
-            </button>
-          </div>
-        </form>
-      </section>
+            <span>
+                PARCELLATOR
+            </span>
+
+            <span>
+                Smart Parcel Monitoring System
+            </span>
+
+        </footer>
 
     </main>
 
-    <footer class="app-footer">
-      <span>PARCELLATOR <em>v1.0.0</em></span>
-      <span class="hide-mobile">Smart Parcel Monitoring System · IoT + RFID + Load Cell + Web</span>
-    </footer>
-
-  </div>
-</div>
-
-<!-- MODAL -->
-<div class="modal-backdrop" id="modalBackdrop">
-  <div class="modal" id="modalBox" role="dialog" aria-modal="true">
-    <button class="modal-close" id="modalClose">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
-    </button>
-    <div id="modalContent"></div>
-  </div>
-</div>
-
-<!-- TOAST -->
-<div class="toast" id="toast"></div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
-<script src="script.js"></script>
 </body>
+
 </html>
+
