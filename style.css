@@ -1,9 +1,3 @@
-/* ==========================================================================
-   PARCELLATOR — Smart Parcel Monitoring System
-   Dark IoT dashboard theme. All core colors are CSS variables (see :root)
-   so the theme can be re-skinned without touching component rules.
-   ========================================================================== */
-
 * {
   margin: 0;
   padding: 0;
