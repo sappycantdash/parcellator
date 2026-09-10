@@ -603,5 +603,14 @@ footer {
         gap: 5px;
     }
 
+
+
+.welcome {
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    border-left: 4px solid #2563eb;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
 }
 
