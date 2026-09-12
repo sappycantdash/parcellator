@@ -80,65 +80,6 @@
         </nav>
 
 
-        <!-- =========================
-             WHAT'S INSIDE (LIVE)
-        ========================== -->
-
-        <div class="contents-panel">
-
-            <p class="nav-section-label">What's Inside</p>
-
-            <div class="contents-box">
-
-                <div class="contents-box-header">
-                    <span class="contents-parcel-id">Parcel #024</span>
-                    <span class="tag opened-tag">OPENED</span>
-                </div>
-
-                <ul class="contents-fields">
-
-                    <li>
-                        <span>Item</span>
-                        <strong>Wireless Mouse</strong>
-                    </li>
-
-                    <li>
-                        <span>Quantity</span>
-                        <strong>1</strong>
-                    </li>
-
-                    <li>
-                        <span>Sender</span>
-                        <strong>Amazon Logistics</strong>
-                    </li>
-
-                    <li>
-                        <span>Tracking No.</span>
-                        <strong>PCL-2026-0091</strong>
-                    </li>
-
-                    <li>
-                        <span>Category</span>
-                        <strong>Electronics</strong>
-                    </li>
-
-                    <li>
-                        <span>Fragile</span>
-                        <strong>No</strong>
-                    </li>
-
-                    <li>
-                        <span>Est. Value</span>
-                        <strong>$25.00</strong>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-
         <a href="index.html" class="sidebar-logout">
             <span class="nav-icon">⎋</span>
             <span>Log out</span>
@@ -157,8 +98,13 @@
     <header class="header">
 
         <div class="header-heading">
-            <p class="label">DASHBOARD</p>
-            <h2>Overview</h2>
+            <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Show or hide sidebar">
+                ☰
+            </button>
+            <div>
+                <p class="label">DASHBOARD</p>
+                <h2>Overview</h2>
+            </div>
         </div>
 
 
@@ -655,6 +601,13 @@
 
 
     <script>
+
+        var appShell = document.querySelector(".app-shell");
+        var sidebarToggle = document.getElementById("sidebarToggle");
+
+        sidebarToggle.addEventListener("click", function () {
+            appShell.classList.toggle("sidebar-collapsed");
+        });
 
         var modal = document.getElementById("contentsModal");
         var closeBtn = document.getElementById("modalClose");
