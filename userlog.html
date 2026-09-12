@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>PARCELLATOR - Login</title>
+
+<link rel="stylesheet" href="userlog.css?v=2">
+```
+
+</head>
+
+<body class="login-page">
+
+```
+<main class="login-container">
+
+    <!-- Logo -->
+    <div class="login-logo">
+        P
+    </div>
+
+    <!-- Brand -->
+    <div class="login-brand">
+        <h1>PARCELLATOR</h1>
+        <p>Smart Parcel Monitoring System</p>
+    </div>
+
+
+    <!-- Login Card -->
+    <section class="login-card">
+
+        <div class="login-heading">
+
+            <p class="login-label">
+                USER LOGIN
+            </p>
+
+            <h2>
+                Welcome back
+            </h2>
+
+            <p>
+                Sign in to access the PARCELLATOR monitoring dashboard.
+            </p>
+
+        </div>
+
+
+        <!-- Login Form -->
+        <form id="loginForm">
+
+            <!-- Username -->
+            <div class="form-group">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter your username"
+                    autocomplete="username"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Password -->
+            <div class="form-group">
+
+                <div class="password-label">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <button
+                        type="button"
+                        id="togglePassword"
+                        class="show-password"
+                    >
+                        Show
+                    </button>
+
+                </div>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Remember Me -->
+            <div class="login-options">
+
+                <label class="remember-me">
+
+                    <input
+                        type="checkbox"
+                        id="rememberMe"
+                    >
+
+                    <span>
+                        Remember me
+                    </span>
+
+                </label>
+
+                <a href="#" class="forgot-password">
+                    Forgot password?
+                </a>
+
+            </div>
+
+
+            <!-- Error -->
+            <p id="loginError" class="login-error">
+                Invalid username or password.
+            </p>
+
+
+            <!-- Login Button -->
+            <button
+                type="submit"
+                class="login-button"
+            >
+                LOGIN
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="login-footer">
+
+        <span>
+            PARCELLATOR
+        </span>
+
+        <span>
+            Smart Parcel Monitoring System
+        </span>
+
+    </footer>
+
+</main>
+
+
+<script>
+
+    /* =========================
+       ELEMENTS
+    ========================= */
+
+    const loginForm = document.getElementById("loginForm");
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const loginError = document.getElementById("loginError");
+    const togglePassword = document.getElementById("togglePassword");
+    const rememberMe = document.getElementById("rememberMe");
+
+
+    /* =========================
+       SHOW / HIDE PASSWORD
+    ========================= */
+
+    togglePassword.addEventListener("click", function () {
+
+        if (password.type === "password") {
+
+            password.type = "text";
+            togglePassword.textContent = "Hide";
+
+        } else {
+
+            password.type = "password";
+            togglePassword.textContent = "Show";
+
+        }
+
+    });
+
+
+    /* =========================
+       LOGIN
+    ========================= */
+
+    loginForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const enteredUsername = username.value.trim();
+        const enteredPassword = password.value;
+
+
+        /*
+            TEMPORARY LOGIN
+            FOR PROTOTYPE ONLY
+
+            Username: admin
+            Password: admin123
+        */
+
+        if (
+            enteredUsername === "admin" &&
+            enteredPassword === "admin123"
+        ) {
+
+            loginError.style.display = "none";
+
+
+            /* Save login session */
+
+            if (rememberMe.checked) {
+
+                localStorage.setItem(
+                    "parcellatorLoggedIn",
+                    "true"
+                );
+
+            } else {
+
+                sessionStorage.setItem(
+                    "parcellatorLoggedIn",
+                    "true"
+                );
+
+            }
+
+
+            /* Go to dashboard */
+
+            window.location.href = "dashboard.html";
+
+        } else {
+
+            loginError.style.display = "block";
+
+            password.value = "";
+
+        }
+
+    });
+
+</script>
+```
+
+</body>
+
+</html>
