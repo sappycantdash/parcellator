@@ -8,7 +8,7 @@
 
     <title>PARCELLATOR</title>
 
-    <link rel="stylesheet" href="dashboard.css?v=2">
+    <link rel="stylesheet" href="dashboard.css?v=3">
 
 </head>
 
@@ -19,395 +19,498 @@
     <div class="app-shell">
 
 
-    <!-- =========================
-         SIDEBAR
-    ========================== -->
-
-    <aside class="sidebar">
-
-        <div class="brand">
-
-            <div class="logo">
-                P
-            </div>
-
-            <div class="brand-text">
-
-                <h1>
-                    PARCELLATOR
-                </h1>
-
-                <p>
-                    Smart Parcel Monitoring System
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <nav class="sidebar-nav">
-
-            <p class="nav-section-label">Monitor</p>
-
-            <a href="dashboard.html" class="nav-item active">
-                <span class="nav-icon">▣</span>
-                <span>Dashboard</span>
-            </a>
-
-            <p class="nav-section-label">Orders</p>
-
-            <a href="#" class="nav-item">
-                <span class="nav-icon">📦</span>
-                <span>Orders</span>
-            </a>
-
-            <p class="nav-section-label">Activity Log</p>
-
-            <a href="#" class="nav-item">
-                <span class="nav-icon">≡</span>
-                <span>Activity Log</span>
-            </a>
-
-            <p class="nav-section-label">Manage</p>
-
-            <a href="#" class="nav-item">
-                <span class="nav-icon">◧</span>
-                <span>Compartments</span>
-            </a>
-
-            <a href="#" class="nav-item">
-                <span class="nav-icon">⚠</span>
-                <span>Alerts</span>
-            </a>
-
-            <a href="#" class="nav-item">
-                <span class="nav-icon">⚙</span>
-                <span>Settings</span>
-            </a>
-
-        </nav>
-
-
-        <a href="index.html" class="sidebar-logout">
-            <span class="nav-icon">⎋</span>
-            <span>Log out</span>
-        </a>
-
-    </aside>
-
-
-    <div class="main-column">
-
-
-    <!-- =========================
-         HEADER
-    ========================== -->
-
-    <header class="header">
-
-        <div class="header-heading">
-            <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Show or hide sidebar">
-                ☰
-            </button>
-            <div>
-                <p class="label">DASHBOARD</p>
-                <h2>Overview</h2>
-            </div>
-        </div>
-
-
-        <!-- System Status -->
-
-        <div class="system-status">
-
-            <span class="status-dot"></span>
-
-            <strong>
-                System Online
-            </strong>
-
-        </div>
-
-    </header>
-
-
-
-    <!-- =========================
-         MAIN CONTENT
-    ========================== -->
-
-    <main class="container">
-
-
         <!-- =========================
-             SUMMARY
+             SIDEBAR
         ========================== -->
 
-        <section class="summary">
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="logo">
+                    P
+                </div>
+
+                <div class="brand-text">
+
+                    <h1>
+                        PARCELLATOR
+                    </h1>
+
+                    <p>
+                        Smart Parcel Monitoring System
+                    </p>
+
+                </div>
+
+            </div>
 
 
-            <!-- Total Parcels -->
+            <nav class="sidebar-nav">
 
-            <div class="stat-card stat-amber">
+                <p class="nav-section-label">Monitor</p>
 
-                <div class="stat-header">
+                <a href="#" class="nav-item active" id="navDashboard">
+                    <span class="nav-icon">▣</span>
+                    <span>Dashboard</span>
+                </a>
 
+                <p class="nav-section-label">Orders</p>
+
+                <a href="#" class="nav-item" id="navOrders">
+                    <span class="nav-icon">📦</span>
+                    <span>Orders</span>
+                </a>
+
+                <p class="nav-section-label">Activity Log</p>
+
+                <a href="#" class="nav-item" id="navActivityLog">
+                    <span class="nav-icon">≡</span>
+                    <span>Activity Log</span>
+                </a>
+
+                <p class="nav-section-label">Manage</p>
+
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">◧</span>
+                    <span>Compartments</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">⚠</span>
+                    <span>Alerts</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">⚙</span>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+
+            <a href="index.html" class="sidebar-logout">
+                <span class="nav-icon">⎋</span>
+                <span>Log out</span>
+            </a>
+
+        </aside>
+
+
+        <div class="main-column">
+
+
+            <!-- =========================
+                 HEADER
+            ========================== -->
+
+            <header class="header">
+
+                <div class="header-heading">
+                    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Show or hide sidebar">
+                        ☰
+                    </button>
                     <div>
-                        <p class="stat-label">TOTAL PARCELS</p>
-                        <h3>024</h3>
+                        <p class="label" id="headerCategoryLabel">DASHBOARD</p>
+                        <h2 id="headerTitle">Overview</h2>
                     </div>
+                </div>
 
-                    <div class="stat-icon">
-                        📦
-                    </div>
+
+                <!-- System Status -->
+
+                <div class="system-status">
+
+                    <span class="status-dot"></span>
+
+                    <strong>
+                        System Online
+                    </strong>
 
                 </div>
 
-                <span class="stat-delta up">+12% this week</span>
-
-            </div>
-
-
-            <!-- Weight Measurement -->
-
-            <div class="stat-card stat-purple">
-
-                <div class="stat-header">
-
-                    <div>
-                        <p class="stat-label">WEIGHT MEASUREMENT</p>
-                        <h3>0.00 <span class="stat-unit">kg</span></h3>
-                    </div>
-
-                    <div class="stat-icon">
-                        ⚖
-                    </div>
-
-                </div>
-
-                <span class="stat-delta">Current parcel weight</span>
-
-            </div>
-
-
-            <!-- System Status -->
-
-            <div class="stat-card stat-green">
-
-                <div class="stat-header">
-
-                    <div>
-                        <p class="stat-label">SYSTEM STATUS</p>
-                        <h3>ONLINE</h3>
-                    </div>
-
-                    <div class="stat-icon">
-                        ✓
-                    </div>
-
-                </div>
-
-                <span class="stat-delta">100% uptime today</span>
-
-            </div>
-
-
-            <!-- Open Alerts -->
-
-            <div class="stat-card stat-light">
-
-                <div class="stat-header">
-
-                    <div>
-                        <p class="stat-label">OPEN ALERTS</p>
-                        <h3>0</h3>
-                    </div>
-
-                    <div class="stat-icon">
-                        ⚠
-                    </div>
-
-                </div>
-
-                <span class="stat-delta down">0 today</span>
-
-            </div>
-
-
-        </section>
+            </header>
 
 
 
-        <!-- =========================
-             ORDERS
-        ========================== -->
+            <!-- =========================
+                 MAIN CONTENT
+            ========================== -->
 
-        <section class="orders-card">
-
-            <div class="orders-header">
-
-                <div>
-                    <p class="label">PARCEL ORDERS</p>
-                    <h2>Orders</h2>
-                    <p class="description">Parcels received and their current status.</p>
-                </div>
-
-                <span class="orders-filter">This week ▾</span>
-
-            </div>
+            <main class="container">
 
 
-            <div class="orders-list">
+                <!-- =========================
+                     SUMMARY SECTION
+                ========================== -->
+
+                <section class="summary" id="summarySection">
 
 
-                <!-- Order 1 -->
+                    <!-- Total Parcels -->
 
-                <div class="order-item highlighted"
-                     tabindex="0"
-                     data-parcel="Order #ORD-024"
-                     data-event="OPENED"
-                     data-item="Wireless Mouse"
-                     data-qty="1"
-                     data-sender="Amazon Logistics"
-                     data-tracking="PCL-2026-0091"
-                     data-category="Electronics"
-                     data-fragile="No"
-                     data-value="$25.00">
+                    <div class="stat-card stat-amber">
 
-                    <div class="order-icon opened">
-                        📦
-                    </div>
+                        <div class="stat-header">
 
-                    <div class="order-info">
+                            <div>
+                                <p class="stat-label">TOTAL PARCELS</p>
+                                <h3>024</h3>
+                            </div>
 
-                        <div class="order-title">
-                            <strong>Order #ORD-024</strong>
-                            <span class="tag opened-tag">OPENED</span>
+                            <div class="stat-icon">
+                                📦
+                            </div>
+
                         </div>
 
-                        <div class="order-route">
-                            <span><i class="dot dot-blue"></i>Amazon Logistics</span>
-                            <span><i class="dot dot-teal"></i>Electronics · 1 item</span>
+                        <span class="stat-delta up">+12% this week</span>
+
+                    </div>
+
+
+                    <!-- Weight Measurement -->
+
+                    <div class="stat-card stat-purple">
+
+                        <div class="stat-header">
+
+                            <div>
+                                <p class="stat-label">WEIGHT MEASUREMENT</p>
+                                <h3>0.00 <span class="stat-unit">kg</span></h3>
+                            </div>
+
+                            <div class="stat-icon">
+                                ⚖
+                            </div>
+
                         </div>
 
+                        <span class="stat-delta">Current parcel weight</span>
+
                     </div>
 
-                    <div class="order-time">
-                        <strong>09:42 PM</strong>
-                        <span>Today</span>
-                    </div>
 
-                </div>
+                    <!-- System Status -->
 
+                    <div class="stat-card stat-green">
 
-                <!-- Order 2 -->
+                        <div class="stat-header">
 
-                <div class="order-item"
-                     tabindex="0"
-                     data-parcel="Order #ORD-023"
-                     data-event="CLOSED"
-                     data-item="Ceramic Mug Set"
-                     data-qty="2"
-                     data-sender="Novita Home Goods"
-                     data-tracking="PCL-2026-0088"
-                     data-category="Kitchenware"
-                     data-fragile="Yes"
-                     data-value="$18.50">
+                            <div>
+                                <p class="stat-label">SYSTEM STATUS</p>
+                                <h3>ONLINE</h3>
+                            </div>
 
-                    <div class="order-icon closed">
-                        📦
-                    </div>
+                            <div class="stat-icon">
+                                ✓
+                            </div>
 
-                    <div class="order-info">
-
-                        <div class="order-title">
-                            <strong>Order #ORD-023</strong>
-                            <span class="tag closed-tag">CLOSED</span>
                         </div>
 
-                        <div class="order-route">
-                            <span><i class="dot dot-blue"></i>Novita Home Goods</span>
-                            <span><i class="dot dot-teal"></i>Kitchenware · 2 items</span>
+                        <span class="stat-delta">100% uptime today</span>
+
+                    </div>
+
+
+                    <!-- Open Alerts -->
+
+                    <div class="stat-card stat-light">
+
+                        <div class="stat-header">
+
+                            <div>
+                                <p class="stat-label">OPEN ALERTS</p>
+                                <h3>0</h3>
+                            </div>
+
+                            <div class="stat-icon">
+                                ⚠
+                            </div>
+
                         </div>
 
+                        <span class="stat-delta down">0 today</span>
+
                     </div>
 
-                    <div class="order-time">
-                        <strong>09:27 PM</strong>
-                        <span>Today</span>
-                    </div>
 
-                </div>
+                </section>
 
 
-                <!-- Order 3 -->
 
-                <div class="order-item"
-                     tabindex="0"
-                     data-parcel="Order #ORD-022"
-                     data-event="OPENED"
-                     data-item="Bluetooth Speaker"
-                     data-qty="1"
-                     data-sender="TechHub Express"
-                     data-tracking="PCL-2026-0079"
-                     data-category="Electronics"
-                     data-fragile="No"
-                     data-value="$42.00">
+                <!-- =========================
+                     ORDERS CARD (DEFAULT MAIN VIEW)
+                ========================== -->
 
-                    <div class="order-icon opened">
-                        📦
-                    </div>
+                <section class="orders-card" id="ordersSection">
 
-                    <div class="order-info">
+                    <div class="orders-header">
 
-                        <div class="order-title">
-                            <strong>Order #ORD-022</strong>
-                            <span class="tag opened-tag">OPENED</span>
+                        <div>
+                            <p class="label">PARCEL ORDERS</p>
+                            <h2>Orders</h2>
+                            <p class="description">Parcels received and their current status.</p>
                         </div>
 
-                        <div class="order-route">
-                            <span><i class="dot dot-blue"></i>TechHub Express</span>
-                            <span><i class="dot dot-teal"></i>Electronics · 1 item</span>
+                        <span class="orders-filter">This week ▾</span>
+
+                    </div>
+
+
+                    <div class="orders-list">
+
+
+                        <!-- Order 1 -->
+
+                        <div class="order-item highlighted"
+                             tabindex="0"
+                             data-parcel="Order #ORD-024"
+                             data-event="OPENED"
+                             data-item="Wireless Mouse"
+                             data-qty="1"
+                             data-sender="Amazon Logistics"
+                             data-tracking="PCL-2026-0091"
+                             data-category="Electronics"
+                             data-fragile="No"
+                             data-value="$25.00"
+                             data-taken="09:45 PM Today">
+
+                            <div class="order-icon opened">
+                                📦
+                            </div>
+
+                            <div class="order-info">
+
+                                <div class="order-title">
+                                    <strong>Order #ORD-024</strong>
+                                    <span class="tag opened-tag">OPENED</span>
+                                </div>
+
+                                <div class="order-route">
+                                    <span><i class="dot dot-blue"></i>Amazon Logistics</span>
+                                    <span><i class="dot dot-teal"></i>Electronics · 1 item</span>
+                                </div>
+
+                            </div>
+
+                            <div class="order-time">
+                                <strong>09:42 PM</strong>
+                                <span>Today</span>
+                            </div>
+
                         </div>
 
+
+                        <!-- Order 2 -->
+
+                        <div class="order-item"
+                             tabindex="0"
+                             data-parcel="Order #ORD-023"
+                             data-event="CLOSED"
+                             data-item="Ceramic Mug Set"
+                             data-qty="2"
+                             data-sender="Novita Home Goods"
+                             data-tracking="PCL-2026-0088"
+                             data-category="Kitchenware"
+                             data-fragile="Yes"
+                             data-value="$18.50"
+                             data-taken="09:30 PM Today">
+
+                            <div class="order-icon closed">
+                                📦
+                            </div>
+
+                            <div class="order-info">
+
+                                <div class="order-title">
+                                    <strong>Order #ORD-023</strong>
+                                    <span class="tag closed-tag">CLOSED</span>
+                                </div>
+
+                                <div class="order-route">
+                                    <span><i class="dot dot-blue"></i>Novita Home Goods</span>
+                                    <span><i class="dot dot-teal"></i>Kitchenware · 2 items</span>
+                                </div>
+
+                            </div>
+
+                            <div class="order-time">
+                                <strong>09:27 PM</strong>
+                                <span>Today</span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Order 3 -->
+
+                        <div class="order-item"
+                             tabindex="0"
+                             data-parcel="Order #ORD-022"
+                             data-event="OPENED"
+                             data-item="Bluetooth Speaker"
+                             data-qty="1"
+                             data-sender="TechHub Express"
+                             data-tracking="PCL-2026-0079"
+                             data-category="Electronics"
+                             data-fragile="No"
+                             data-value="$42.00"
+                             data-taken="04:20 PM Yesterday">
+
+                            <div class="order-icon opened">
+                                📦
+                            </div>
+
+                            <div class="order-info">
+
+                                <div class="order-title">
+                                    <strong>Order #ORD-022</strong>
+                                    <span class="tag opened-tag">OPENED</span>
+                                </div>
+
+                                <div class="order-route">
+                                    <span><i class="dot dot-blue"></i>TechHub Express</span>
+                                    <span><i class="dot dot-teal"></i>Electronics · 1 item</span>
+                                </div>
+
+                            </div>
+
+                            <div class="order-time">
+                                <strong>04:15 PM</strong>
+                                <span>Yesterday</span>
+                            </div>
+
+                        </div>
+
+
                     </div>
 
-                    <div class="order-time">
-                        <strong>04:15 PM</strong>
-                        <span>Yesterday</span>
+                </section>
+
+
+
+                <!-- =========================
+                     ACTIVITY LOG SECTION (REPLACES MAIN VIEW)
+                ========================== -->
+
+                <section class="orders-card activity-section" id="activityLogSection">
+
+                    <div class="orders-header">
+
+                        <div>
+                            <p class="label">SYSTEM LOGS</p>
+                            <h2>Activity Log</h2>
+                            <p class="description">Detailed logs showing when parcels arrived and when they were taken inside.</p>
+                        </div>
+
+                        <span class="orders-filter">All Events ▾</span>
+
                     </div>
 
-                </div>
+
+                    <div class="table-wrapper">
+
+                        <table class="activity-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Item Details</th>
+                                    <th>Status</th>
+                                    <th>Delivered At</th>
+                                    <th>Taken Inside At</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td><strong>#ORD-024</strong></td>
+                                    <td>
+                                        <span class="item-name">Wireless Mouse</span>
+                                        <span class="item-sub">Amazon Logistics</span>
+                                    </td>
+                                    <td><span class="tag opened-tag">OPENED</span></td>
+                                    <td>09:42 PM Today</td>
+                                    <td><strong class="highlight-time">09:45 PM Today</strong></td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>#ORD-023</strong></td>
+                                    <td>
+                                        <span class="item-name">Ceramic Mug Set</span>
+                                        <span class="item-sub">Novita Home Goods</span>
+                                    </td>
+                                    <td><span class="tag closed-tag">CLOSED</span></td>
+                                    <td>09:27 PM Today</td>
+                                    <td><strong class="highlight-time">09:30 PM Today</strong></td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>#ORD-022</strong></td>
+                                    <td>
+                                        <span class="item-name">Bluetooth Speaker</span>
+                                        <span class="item-sub">TechHub Express</span>
+                                    </td>
+                                    <td><span class="tag opened-tag">OPENED</span></td>
+                                    <td>04:15 PM Yesterday</td>
+                                    <td><strong class="highlight-time">04:20 PM Yesterday</strong></td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>#ORD-021</strong></td>
+                                    <td>
+                                        <span class="item-name">Mechanical Keyboard</span>
+                                        <span class="item-sub">Keychron Store</span>
+                                    </td>
+                                    <td><span class="tag closed-tag">CLOSED</span></td>
+                                    <td>01:10 PM Sep 10, 2026</td>
+                                    <td><strong class="highlight-time">01:18 PM Sep 10, 2026</strong></td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>#ORD-020</strong></td>
+                                    <td>
+                                        <span class="item-name">Leather Wallet</span>
+                                        <span class="item-sub">Fossil Official</span>
+                                    </td>
+                                    <td><span class="tag closed-tag">CLOSED</span></td>
+                                    <td>10:05 AM Sep 08, 2026</td>
+                                    <td><strong class="highlight-time">10:12 AM Sep 08, 2026</strong></td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
 
 
-            </div>
 
-        </section>
+                <!-- =========================
+                     FOOTER
+                ========================== -->
 
+                <footer>
 
+                    <span>
+                        PARCELLATOR
+                    </span>
 
-        <!-- =========================
-             FOOTER
-        ========================== -->
+                    <span>
+                        Smart Parcel Monitoring System
+                    </span>
 
-        <footer>
-
-            <span>
-                PARCELLATOR
-            </span>
-
-            <span>
-                Smart Parcel Monitoring System
-            </span>
-
-        </footer>
+                </footer>
 
 
-    </main>
+            </main>
 
 
-    </div>
+        </div>
 
 
     </div>
@@ -440,6 +543,7 @@
                 <li><span>Category</span><strong id="modalCategory"></strong></li>
                 <li><span>Fragile</span><strong id="modalFragile"></strong></li>
                 <li><span>Est. Value</span><strong id="modalValue"></strong></li>
+                <li><span>Taken Inside At</span><strong id="modalTaken" class="highlight-time"></strong></li>
             </ul>
 
         </div>
@@ -449,6 +553,7 @@
 
     <script>
 
+        /* SIDEBAR TOGGLE */
         var appShell = document.querySelector(".app-shell");
         var sidebarToggle = document.getElementById("sidebarToggle");
 
@@ -456,6 +561,75 @@
             appShell.classList.toggle("sidebar-collapsed");
         });
 
+
+        /* NAVIGATION & SCREEN REPLACEMENT LOGIC */
+        var navDashboard = document.getElementById("navDashboard");
+        var navOrders = document.getElementById("navOrders");
+        var navActivityLog = document.getElementById("navActivityLog");
+
+        var summarySection = document.getElementById("summarySection");
+        var ordersSection = document.getElementById("ordersSection");
+        var activityLogSection = document.getElementById("activityLogSection");
+
+        var headerCategoryLabel = document.getElementById("headerCategoryLabel");
+        var headerTitle = document.getElementById("headerTitle");
+
+        function showDashboardView() {
+            navDashboard.classList.add("active");
+            navOrders.classList.remove("active");
+            navActivityLog.classList.remove("active");
+
+            summarySection.style.display = "grid";
+            ordersSection.style.display = "block";
+            activityLogSection.style.display = "none";
+
+            headerCategoryLabel.textContent = "DASHBOARD";
+            headerTitle.textContent = "Overview";
+        }
+
+        function showOrdersView() {
+            navDashboard.classList.remove("active");
+            navOrders.classList.add("active");
+            navActivityLog.classList.remove("active");
+
+            summarySection.style.display = "none";
+            ordersSection.style.display = "block";
+            activityLogSection.style.display = "none";
+
+            headerCategoryLabel.textContent = "ORDERS";
+            headerTitle.textContent = "Parcel List";
+        }
+
+        function showActivityLogView() {
+            navDashboard.classList.remove("active");
+            navOrders.classList.remove("active");
+            navActivityLog.classList.add("active");
+
+            summarySection.style.display = "none";
+            ordersSection.style.display = "none";
+            activityLogSection.style.display = "block";
+
+            headerCategoryLabel.textContent = "ACTIVITY LOG";
+            headerTitle.textContent = "Parcel Pickup Times";
+        }
+
+        navDashboard.addEventListener("click", function (e) {
+            e.preventDefault();
+            showDashboardView();
+        });
+
+        navOrders.addEventListener("click", function (e) {
+            e.preventDefault();
+            showOrdersView();
+        });
+
+        navActivityLog.addEventListener("click", function (e) {
+            e.preventDefault();
+            showActivityLogView();
+        });
+
+
+        /* MODAL LOGIC */
         var modal = document.getElementById("contentsModal");
         var closeBtn = document.getElementById("modalClose");
         var items = document.querySelectorAll(".order-item");
@@ -474,6 +648,7 @@
             document.getElementById("modalCategory").textContent = el.dataset.category || "";
             document.getElementById("modalFragile").textContent = el.dataset.fragile || "";
             document.getElementById("modalValue").textContent = el.dataset.value || "";
+            document.getElementById("modalTaken").textContent = el.dataset.taken || "";
 
             modal.classList.add("active");
         }
