@@ -142,7 +142,7 @@ body {
 
 
 /* =========================
-   PARCEL CONTENTS FIELDS (used in modal)
+   PARCEL CONTENTS FIELDS
 ========================= */
 
 .contents-fields {
@@ -768,23 +768,11 @@ body {
     align-items: center;
     justify-content: center;
 
-    border-radius: 9px;
+    border-radius: 99px;
 
     font-size: 17px;
-}
-
-
-.order-icon.opened {
     background: #eff6ff;
-
     color: #2563eb;
-}
-
-
-.order-icon.closed {
-    background: #f0fdf4;
-
-    color: #16a34a;
 }
 
 
@@ -812,6 +800,16 @@ body {
     font-size: 13px;
 
     color: #1f2937;
+}
+
+
+.order-price {
+    padding: 3px 8px;
+    background: #f3f4f6;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #059669;
 }
 
 
@@ -889,7 +887,7 @@ body {
 .order-time {
     flex-shrink: 0;
 
-    width: 100px;
+    width: 140px;
 
     text-align: right;
 }
@@ -900,7 +898,7 @@ body {
 
     font-size: 11px;
 
-    color: #374151;
+    color: #2563eb;
 }
 
 
@@ -911,7 +909,67 @@ body {
 
     font-size: 9px;
 
+    color: #6b7280;
+}
+
+
+/* =========================
+   ACTIVITY LOG TABLE VIEW
+========================= */
+
+.activity-section {
+    display: none;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.activity-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 12px;
+}
+
+.activity-table th {
+    background: #f9fafb;
+    padding: 14px 25px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #6b7280;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.activity-table td {
+    padding: 16px 25px;
+    border-bottom: 1px solid #f0f2f5;
+    color: #374151;
+}
+
+.activity-table tr:hover {
+    background: #fafafa;
+}
+
+.item-name {
+    display: block;
+    font-weight: 600;
+    color: #111827;
+}
+
+.item-sub {
+    display: block;
+    font-size: 10px;
     color: #9ca3af;
+    margin-top: 2px;
+}
+
+.highlight-time {
+    color: #2563eb;
+    font-weight: 700;
 }
 
 
@@ -1102,6 +1160,12 @@ footer {
 
     .order-time span {
         display: none;
+    }
+
+
+    .activity-table th,
+    .activity-table td {
+        padding: 12px 15px;
     }
 
 

@@ -8,7 +8,7 @@
 
     <title>PARCELLATOR</title>
 
-    <link rel="stylesheet" href="dashboard.css?v=3">
+    <link rel="stylesheet" href="dashboard.css?v=4">
 
 </head>
 
@@ -250,7 +250,7 @@
                         <div>
                             <p class="label">PARCEL ORDERS</p>
                             <h2>Orders</h2>
-                            <p class="description">Parcels received and their current status.</p>
+                            <p class="description">Upcoming and recent deliveries with price details.</p>
                         </div>
 
                         <span class="orders-filter">This week ▾</span>
@@ -266,7 +266,8 @@
                         <div class="order-item highlighted"
                              tabindex="0"
                              data-parcel="Order #ORD-024"
-                             data-event="OPENED"
+                             data-price="$25.00"
+                             data-eta="Arriving Today at 04:30 PM"
                              data-item="Wireless Mouse"
                              data-qty="1"
                              data-sender="Amazon Logistics"
@@ -276,7 +277,7 @@
                              data-value="$25.00"
                              data-taken="09:45 PM Today">
 
-                            <div class="order-icon opened">
+                            <div class="order-icon">
                                 📦
                             </div>
 
@@ -284,19 +285,19 @@
 
                                 <div class="order-title">
                                     <strong>Order #ORD-024</strong>
-                                    <span class="tag opened-tag">OPENED</span>
+                                    <span class="order-price">$25.00</span>
                                 </div>
 
                                 <div class="order-route">
                                     <span><i class="dot dot-blue"></i>Amazon Logistics</span>
-                                    <span><i class="dot dot-teal"></i>Electronics · 1 item</span>
+                                    <span><i class="dot dot-teal"></i>Electronics · Wireless Mouse</span>
                                 </div>
 
                             </div>
 
                             <div class="order-time">
-                                <strong>09:42 PM</strong>
-                                <span>Today</span>
+                                <strong>Arriving Today</strong>
+                                <span>Est. 04:30 PM</span>
                             </div>
 
                         </div>
@@ -307,7 +308,8 @@
                         <div class="order-item"
                              tabindex="0"
                              data-parcel="Order #ORD-023"
-                             data-event="CLOSED"
+                             data-price="$18.50"
+                             data-eta="Arriving Tomorrow at 11:00 AM"
                              data-item="Ceramic Mug Set"
                              data-qty="2"
                              data-sender="Novita Home Goods"
@@ -317,7 +319,7 @@
                              data-value="$18.50"
                              data-taken="09:30 PM Today">
 
-                            <div class="order-icon closed">
+                            <div class="order-icon">
                                 📦
                             </div>
 
@@ -325,19 +327,19 @@
 
                                 <div class="order-title">
                                     <strong>Order #ORD-023</strong>
-                                    <span class="tag closed-tag">CLOSED</span>
+                                    <span class="order-price">$18.50</span>
                                 </div>
 
                                 <div class="order-route">
                                     <span><i class="dot dot-blue"></i>Novita Home Goods</span>
-                                    <span><i class="dot dot-teal"></i>Kitchenware · 2 items</span>
+                                    <span><i class="dot dot-teal"></i>Kitchenware · Ceramic Mug Set</span>
                                 </div>
 
                             </div>
 
                             <div class="order-time">
-                                <strong>09:27 PM</strong>
-                                <span>Today</span>
+                                <strong>Arriving Tomorrow</strong>
+                                <span>Est. 11:00 AM</span>
                             </div>
 
                         </div>
@@ -348,7 +350,8 @@
                         <div class="order-item"
                              tabindex="0"
                              data-parcel="Order #ORD-022"
-                             data-event="OPENED"
+                             data-price="$42.00"
+                             data-eta="Arriving Sep 15 at 02:15 PM"
                              data-item="Bluetooth Speaker"
                              data-qty="1"
                              data-sender="TechHub Express"
@@ -358,7 +361,7 @@
                              data-value="$42.00"
                              data-taken="04:20 PM Yesterday">
 
-                            <div class="order-icon opened">
+                            <div class="order-icon">
                                 📦
                             </div>
 
@@ -366,19 +369,19 @@
 
                                 <div class="order-title">
                                     <strong>Order #ORD-022</strong>
-                                    <span class="tag opened-tag">OPENED</span>
+                                    <span class="order-price">$42.00</span>
                                 </div>
 
                                 <div class="order-route">
                                     <span><i class="dot dot-blue"></i>TechHub Express</span>
-                                    <span><i class="dot dot-teal"></i>Electronics · 1 item</span>
+                                    <span><i class="dot dot-teal"></i>Electronics · Bluetooth Speaker</span>
                                 </div>
 
                             </div>
 
                             <div class="order-time">
-                                <strong>04:15 PM</strong>
-                                <span>Yesterday</span>
+                                <strong>Arriving Sep 15</strong>
+                                <span>Est. 02:15 PM</span>
                             </div>
 
                         </div>
@@ -528,11 +531,11 @@
                 ×
             </button>
 
-            <p class="label" id="modalLabel">PARCEL CONTENTS</p>
+            <p class="label" id="modalLabel">PARCEL DETAILS</p>
 
             <div class="modal-title-row">
                 <h2 id="modalParcel">Parcel #024</h2>
-                <span class="tag" id="modalEventTag">OPENED</span>
+                <span class="order-price" id="modalPriceTag">$0.00</span>
             </div>
 
             <ul class="contents-fields" id="modalFields">
@@ -543,7 +546,7 @@
                 <li><span>Category</span><strong id="modalCategory"></strong></li>
                 <li><span>Fragile</span><strong id="modalFragile"></strong></li>
                 <li><span>Est. Value</span><strong id="modalValue"></strong></li>
-                <li><span>Taken Inside At</span><strong id="modalTaken" class="highlight-time"></strong></li>
+                <li><span>Estimated Arrival</span><strong id="modalEta" class="highlight-time"></strong></li>
             </ul>
 
         </div>
@@ -636,10 +639,7 @@
 
         function openModal(el) {
             document.getElementById("modalParcel").textContent = el.dataset.parcel || "";
-
-            var eventTag = document.getElementById("modalEventTag");
-            eventTag.textContent = el.dataset.event || "";
-            eventTag.className = "tag " + (el.dataset.event === "OPENED" ? "opened-tag" : "closed-tag");
+            document.getElementById("modalPriceTag").textContent = el.dataset.price || "";
 
             document.getElementById("modalItem").textContent = el.dataset.item || "";
             document.getElementById("modalQty").textContent = el.dataset.qty || "";
@@ -648,7 +648,7 @@
             document.getElementById("modalCategory").textContent = el.dataset.category || "";
             document.getElementById("modalFragile").textContent = el.dataset.fragile || "";
             document.getElementById("modalValue").textContent = el.dataset.value || "";
-            document.getElementById("modalTaken").textContent = el.dataset.taken || "";
+            document.getElementById("modalEta").textContent = el.dataset.eta || "";
 
             modal.classList.add("active");
         }
