@@ -16,11 +16,14 @@
 <body>
 
 
+    <div class="app-shell">
+
+
     <!-- =========================
-         HEADER
+         SIDEBAR
     ========================== -->
 
-    <header class="header">
+    <aside class="sidebar">
 
         <div class="brand">
 
@@ -40,6 +43,122 @@
 
             </div>
 
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-section-label">Monitor</p>
+
+            <a href="dashboard.html" class="nav-item active">
+                <span class="nav-icon">▣</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">≡</span>
+                <span>Activity Log</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">◧</span>
+                <span>Compartments</span>
+            </a>
+
+            <p class="nav-section-label">Manage</p>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">⚠</span>
+                <span>Alerts</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <!-- =========================
+             WHAT'S INSIDE (LIVE)
+        ========================== -->
+
+        <div class="contents-panel">
+
+            <p class="nav-section-label">What's Inside</p>
+
+            <div class="contents-box">
+
+                <div class="contents-box-header">
+                    <span class="contents-parcel-id">Parcel #024</span>
+                    <span class="tag opened-tag">OPENED</span>
+                </div>
+
+                <ul class="contents-fields">
+
+                    <li>
+                        <span>Item</span>
+                        <strong>Wireless Mouse</strong>
+                    </li>
+
+                    <li>
+                        <span>Quantity</span>
+                        <strong>1</strong>
+                    </li>
+
+                    <li>
+                        <span>Sender</span>
+                        <strong>Amazon Logistics</strong>
+                    </li>
+
+                    <li>
+                        <span>Tracking No.</span>
+                        <strong>PCL-2026-0091</strong>
+                    </li>
+
+                    <li>
+                        <span>Category</span>
+                        <strong>Electronics</strong>
+                    </li>
+
+                    <li>
+                        <span>Fragile</span>
+                        <strong>No</strong>
+                    </li>
+
+                    <li>
+                        <span>Est. Value</span>
+                        <strong>$25.00</strong>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <a href="index.html" class="sidebar-logout">
+            <span class="nav-icon">⎋</span>
+            <span>Log out</span>
+        </a>
+
+    </aside>
+
+
+    <div class="main-column">
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="header-heading">
+            <p class="label">DASHBOARD</p>
+            <h2>Overview</h2>
         </div>
 
 
@@ -244,7 +363,17 @@
 
                 <!-- Opened -->
 
-                <div class="activity-item">
+                <div class="activity-item"
+                     tabindex="0"
+                     data-parcel="Parcel #024"
+                     data-event="OPENED"
+                     data-item="Wireless Mouse"
+                     data-qty="1"
+                     data-sender="Amazon Logistics"
+                     data-tracking="PCL-2026-0091"
+                     data-category="Electronics"
+                     data-fragile="No"
+                     data-value="$25.00">
 
                     <div class="activity-icon opened">
                         ↗
@@ -291,7 +420,17 @@
 
                 <!-- Closed -->
 
-                <div class="activity-item">
+                <div class="activity-item"
+                     tabindex="0"
+                     data-parcel="Parcel #024"
+                     data-event="CLOSED"
+                     data-item="Wireless Mouse"
+                     data-qty="1"
+                     data-sender="Amazon Logistics"
+                     data-tracking="PCL-2026-0091"
+                     data-category="Electronics"
+                     data-fragile="No"
+                     data-value="$25.00">
 
                     <div class="activity-icon closed">
                         ✓
@@ -338,7 +477,17 @@
 
                 <!-- Opened -->
 
-                <div class="activity-item">
+                <div class="activity-item"
+                     tabindex="0"
+                     data-parcel="Parcel #023"
+                     data-event="OPENED"
+                     data-item="Ceramic Mug Set"
+                     data-qty="2"
+                     data-sender="Novita Home Goods"
+                     data-tracking="PCL-2026-0088"
+                     data-category="Kitchenware"
+                     data-fragile="Yes"
+                     data-value="$18.50">
 
                     <div class="activity-icon opened">
                         ↗
@@ -385,7 +534,17 @@
 
                 <!-- Closed -->
 
-                <div class="activity-item">
+                <div class="activity-item"
+                     tabindex="0"
+                     data-parcel="Parcel #023"
+                     data-event="CLOSED"
+                     data-item="Ceramic Mug Set"
+                     data-qty="2"
+                     data-sender="Novita Home Goods"
+                     data-tracking="PCL-2026-0088"
+                     data-category="Kitchenware"
+                     data-fragile="Yes"
+                     data-value="$18.50">
 
                     <div class="activity-icon closed">
                         ✓
@@ -453,6 +612,102 @@
 
 
     </main>
+
+
+    </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         PARCEL CONTENTS MODAL
+    ========================== -->
+
+    <div class="modal-overlay" id="contentsModal">
+
+        <div class="modal-box">
+
+            <button type="button" class="modal-close" id="modalClose" aria-label="Close">
+                ×
+            </button>
+
+            <p class="label" id="modalLabel">PARCEL CONTENTS</p>
+
+            <div class="modal-title-row">
+                <h2 id="modalParcel">Parcel #024</h2>
+                <span class="tag" id="modalEventTag">OPENED</span>
+            </div>
+
+            <ul class="contents-fields" id="modalFields">
+                <li><span>Item</span><strong id="modalItem"></strong></li>
+                <li><span>Quantity</span><strong id="modalQty"></strong></li>
+                <li><span>Sender</span><strong id="modalSender"></strong></li>
+                <li><span>Tracking No.</span><strong id="modalTracking"></strong></li>
+                <li><span>Category</span><strong id="modalCategory"></strong></li>
+                <li><span>Fragile</span><strong id="modalFragile"></strong></li>
+                <li><span>Est. Value</span><strong id="modalValue"></strong></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        var modal = document.getElementById("contentsModal");
+        var closeBtn = document.getElementById("modalClose");
+        var items = document.querySelectorAll(".activity-item");
+
+        function openModal(el) {
+            document.getElementById("modalParcel").textContent = el.dataset.parcel || "";
+
+            var eventTag = document.getElementById("modalEventTag");
+            eventTag.textContent = el.dataset.event || "";
+            eventTag.className = "tag " + (el.dataset.event === "OPENED" ? "opened-tag" : "closed-tag");
+
+            document.getElementById("modalItem").textContent = el.dataset.item || "";
+            document.getElementById("modalQty").textContent = el.dataset.qty || "";
+            document.getElementById("modalSender").textContent = el.dataset.sender || "";
+            document.getElementById("modalTracking").textContent = el.dataset.tracking || "";
+            document.getElementById("modalCategory").textContent = el.dataset.category || "";
+            document.getElementById("modalFragile").textContent = el.dataset.fragile || "";
+            document.getElementById("modalValue").textContent = el.dataset.value || "";
+
+            modal.classList.add("active");
+        }
+
+        function closeModal() {
+            modal.classList.remove("active");
+        }
+
+        items.forEach(function (item) {
+            if (!item.dataset.parcel) return;
+
+            item.addEventListener("click", function () {
+                openModal(item);
+            });
+
+            item.addEventListener("keydown", function (e) {
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    openModal(item);
+                }
+            });
+        });
+
+        closeBtn.addEventListener("click", closeModal);
+
+        modal.addEventListener("click", function (e) {
+            if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") closeModal();
+        });
+
+    </script>
 
 
 </body>
