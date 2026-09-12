@@ -2,17 +2,24 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>PARCELLATOR</title>
 
     <link rel="stylesheet" href="dashboard.css?v=2">
+
 </head>
+
 
 <body>
 
-    <!-- Header -->
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
     <header class="header">
 
         <div class="brand">
@@ -22,25 +29,47 @@
             </div>
 
             <div class="brand-text">
-                <h1>PARCELLATOR</h1>
-                <p>Smart Parcel Monitoring System</p>
+
+                <h1>
+                    PARCELLATOR
+                </h1>
+
+                <p>
+                    Smart Parcel Monitoring System
+                </p>
+
             </div>
 
         </div>
 
+
         <!-- System Status -->
+
         <div class="system-status">
+
             <span class="status-dot"></span>
-            <strong>System Online</strong>
+
+            <strong>
+                System Online
+            </strong>
+
         </div>
 
     </header>
 
 
-    <!-- Main Content -->
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
     <main class="container">
 
-        <!-- Dashboard Title -->
+
+        <!-- =========================
+             WELCOME
+        ========================== -->
+
         <section class="welcome">
 
             <p class="label">
@@ -58,15 +87,22 @@
         </section>
 
 
-        <!-- Summary -->
+
+        <!-- =========================
+             SUMMARY
+        ========================== -->
+
         <section class="summary">
 
-            <!-- Parcel Counter -->
+
+            <!-- Total Parcels -->
+
             <div class="card parcel-card">
 
                 <div class="card-header">
 
                     <div>
+
                         <p class="card-label">
                             TOTAL PARCELS
                         </p>
@@ -74,13 +110,16 @@
                         <h3>
                             1
                         </h3>
+
                     </div>
+
 
                     <div class="card-icon parcel-icon">
                         📦
                     </div>
 
                 </div>
+
 
                 <p class="card-note">
                     Parcels processed
@@ -89,12 +128,55 @@
             </div>
 
 
+
+            <!-- Weight Measurement -->
+
+            <div class="card weight-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <p class="card-label">
+                            WEIGHT MEASUREMENT
+                        </p>
+
+                        <h3>
+
+                            0.00
+
+                            <span class="weight-unit">
+                                kg
+                            </span>
+
+                        </h3>
+
+                    </div>
+
+
+                    <div class="card-icon weight-icon">
+                        ⚖
+                    </div>
+
+                </div>
+
+
+                <p class="card-note">
+                    Current parcel weight
+                </p>
+
+            </div>
+
+
+
             <!-- System Status -->
+
             <div class="card status-card">
 
                 <div class="card-header">
 
                     <div>
+
                         <p class="card-label">
                             SYSTEM STATUS
                         </p>
@@ -102,7 +184,9 @@
                         <h3 class="online">
                             ONLINE
                         </h3>
+
                     </div>
+
 
                     <div class="card-icon status-icon">
                         ✓
@@ -110,17 +194,26 @@
 
                 </div>
 
+
                 <p class="card-note">
                     System is operating normally
                 </p>
 
             </div>
 
+
         </section>
 
 
-        <!-- Recent Activities -->
+
+        <!-- =========================
+             RECENT ACTIVITIES
+        ========================== -->
+
         <section class="activity-card">
+
+
+            <!-- Activity Header -->
 
             <div class="activity-header">
 
@@ -143,15 +236,20 @@
             </div>
 
 
+
             <!-- Activity List -->
+
             <div class="activity-list">
 
+
                 <!-- Opened -->
+
                 <div class="activity-item">
 
                     <div class="activity-icon opened">
                         ↗
                     </div>
+
 
                     <div class="activity-info">
 
@@ -167,11 +265,13 @@
 
                         </div>
 
+
                         <p>
                             Parcel compartment opened
                         </p>
 
                     </div>
+
 
                     <div class="activity-time">
 
@@ -188,19 +288,22 @@
                 </div>
 
 
+
                 <!-- Closed -->
+
                 <div class="activity-item">
 
                     <div class="activity-icon closed">
                         ✓
                     </div>
 
+
                     <div class="activity-info">
 
                         <div class="activity-title">
 
                             <strong>
-                                Parcel BoxClosed
+                                Parcel Box Closed
                             </strong>
 
                             <span class="tag closed-tag">
@@ -209,11 +312,13 @@
 
                         </div>
 
+
                         <p>
                             Parcel compartment closed securely
                         </p>
 
                     </div>
+
 
                     <div class="activity-time">
 
@@ -230,12 +335,15 @@
                 </div>
 
 
+
                 <!-- Opened -->
+
                 <div class="activity-item">
 
                     <div class="activity-icon opened">
                         ↗
                     </div>
+
 
                     <div class="activity-info">
 
@@ -251,11 +359,13 @@
 
                         </div>
 
+
                         <p>
                             Parcel compartment opened
                         </p>
 
                     </div>
+
 
                     <div class="activity-time">
 
@@ -272,12 +382,15 @@
                 </div>
 
 
+
                 <!-- Closed -->
+
                 <div class="activity-item">
 
                     <div class="activity-icon closed">
                         ✓
                     </div>
+
 
                     <div class="activity-info">
 
@@ -293,11 +406,13 @@
 
                         </div>
 
+
                         <p>
                             Parcel compartment closed securely
                         </p>
 
                     </div>
+
 
                     <div class="activity-time">
 
@@ -313,12 +428,17 @@
 
                 </div>
 
+
             </div>
 
         </section>
 
 
-        <!-- Footer -->
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
         <footer>
 
             <span>
@@ -331,7 +451,9 @@
 
         </footer>
 
+
     </main>
+
 
 </body>
 
