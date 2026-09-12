@@ -273,15 +273,15 @@ body {
 
 
 /* =========================
-   CLICKABLE ACTIVITY ITEMS
+   CLICKABLE ORDER ITEMS
 ========================= */
 
-.activity-item[data-parcel] {
+.order-item[data-parcel] {
     cursor: pointer;
 }
 
 
-.activity-item[data-parcel]:focus {
+.order-item[data-parcel]:focus {
     outline: 2px solid #2563eb;
     outline-offset: -2px;
 }
@@ -487,50 +487,13 @@ body {
 
 
 /* =========================
-   WELCOME
-========================= */
-
-.welcome {
-    margin-bottom: 25px;
-}
-
-
-.welcome .label {
-    margin-bottom: 8px;
-
-    font-size: 10px;
-    font-weight: bold;
-
-    letter-spacing: 1.5px;
-
-    color: #2563eb;
-}
-
-
-.welcome h2 {
-    margin-bottom: 7px;
-
-    font-size: 28px;
-    font-weight: 700;
-
-    color: #111827;
-}
-
-
-.welcome .description {
-    font-size: 13px;
-    color: #6b7280;
-}
-
-
-/* =========================
    SUMMARY
 ========================= */
 
 .summary {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 20px;
 
@@ -539,98 +502,68 @@ body {
 
 
 /* =========================
-   SUMMARY CARD
+   STAT CARD
 ========================= */
 
-.card {
-    background: #ffffff;
+.stat-card {
+    border-radius: 14px;
 
-    border: 1px solid #e5e7eb;
+    padding: 22px;
 
-    border-radius: 12px;
+    min-height: 130px;
 
-    padding: 25px;
-
-    min-height: 155px;
-
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.card:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 7px 20px rgba(0, 0, 0, 0.07);
-}
-
-
-/* =========================
-   CARD HEADER
-========================= */
-
-.card-header {
     display: flex;
-
-    align-items: flex-start;
-
+    flex-direction: column;
     justify-content: space-between;
+
+    box-shadow: 0 6px 16px rgba(17, 24, 39, 0.06);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 
-/* =========================
-   CARD LABEL
-========================= */
+.stat-card:hover {
+    transform: translateY(-2px);
+}
 
-.card-label {
-    margin-bottom: 12px;
+
+.stat-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+
+.stat-label {
+    margin-bottom: 10px;
 
     font-size: 10px;
     font-weight: bold;
-
     letter-spacing: 1px;
 
-    color: #6b7280;
+    opacity: 0.75;
 }
 
 
-/* =========================
-   CARD NUMBER
-========================= */
-
-.card h3 {
-    font-size: 42px;
-
+.stat-header h3 {
+    font-size: 28px;
     line-height: 1;
-
-    color: #111827;
 }
 
 
-/* =========================
-   ONLINE STATUS
-========================= */
-
-.card h3.online {
-    font-size: 30px;
-
-    color: #16a34a;
-
-    margin-top: 7px;
+.stat-unit {
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.75;
 }
 
 
-/* =========================
-   CARD ICON
-========================= */
-
-.card-icon {
-    width: 48px;
-    height: 48px;
+.stat-icon {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
 
     display: flex;
     align-items: center;
@@ -638,75 +571,77 @@ body {
 
     border-radius: 10px;
 
-    font-size: 21px;
+    font-size: 17px;
+
+    background: rgba(255, 255, 255, 0.25);
 }
 
 
-/* Parcel */
+.stat-delta {
+    display: inline-block;
+    width: fit-content;
 
-.parcel-icon {
-    background: #eff6ff;
+    padding: 3px 9px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    background: rgba(255, 255, 255, 0.22);
 }
 
 
-/* Weight */
+/* Color variants */
 
-.weight-icon {
-    background: #fff7ed;
-
-    color: #ea580c;
+.stat-amber {
+    background: #f5a623;
+    color: #ffffff;
 }
 
 
-/* Status */
-
-.status-icon {
-    background: #f0fdf4;
-
-    color: #16a34a;
+.stat-purple {
+    background: #6c5ce7;
+    color: #ffffff;
 }
 
 
-/* =========================
-   WEIGHT MEASUREMENT
-========================= */
-
-.weight-card h3 {
-    display: flex;
-
-    align-items: baseline;
-
-    gap: 7px;
+.stat-green {
+    background: #16a085;
+    color: #ffffff;
 }
 
 
-.weight-unit {
-    font-size: 16px;
+.stat-light {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    color: #111827;
+}
 
-    font-weight: 600;
 
+.stat-light .stat-label {
     color: #6b7280;
+    opacity: 1;
+}
+
+
+.stat-light .stat-icon {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+
+.stat-light .stat-delta {
+    background: #fef2f2;
+    color: #dc2626;
 }
 
 
 /* =========================
-   CARD NOTE
+   ORDERS SECTION
 ========================= */
 
-.card-note {
-    margin-top: 15px;
-
-    font-size: 11px;
-
-    color: #9ca3af;
-}
-
-
-/* =========================
-   ACTIVITY SECTION
-========================= */
-
-.activity-card {
+.orders-card {
     width: 100%;
 
     background: #ffffff;
@@ -723,17 +658,21 @@ body {
 
 
 /* =========================
-   ACTIVITY HEADER
+   ORDERS HEADER
 ========================= */
 
-.activity-header {
+.orders-header {
     padding: 25px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 
     border-bottom: 1px solid #e5e7eb;
 }
 
 
-.activity-header .label {
+.orders-header .label {
     margin-bottom: 7px;
 
     font-size: 10px;
@@ -745,7 +684,7 @@ body {
 }
 
 
-.activity-header h2 {
+.orders-header h2 {
     margin-bottom: 6px;
 
     font-size: 19px;
@@ -754,18 +693,32 @@ body {
 }
 
 
-.activity-header .description {
+.orders-header .description {
     font-size: 11px;
 
     color: #6b7280;
 }
 
 
+.orders-filter {
+    flex-shrink: 0;
+
+    padding: 6px 12px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+
+    font-size: 11px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+
 /* =========================
-   ACTIVITY ITEM
+   ORDER ITEM
 ========================= */
 
-.activity-item {
+.order-item {
     width: 100%;
 
     min-height: 80px;
@@ -779,26 +732,33 @@ body {
     gap: 15px;
 
     border-bottom: 1px solid #f0f2f5;
+    border-left: 3px solid transparent;
 
     transition: background 0.2s ease;
 }
 
 
-.activity-item:last-child {
+.order-item:last-child {
     border-bottom: none;
 }
 
 
-.activity-item:hover {
+.order-item:hover {
     background: #fafafa;
 }
 
 
+.order-item.highlighted {
+    border-left-color: #2563eb;
+    background: #f8faff;
+}
+
+
 /* =========================
-   ACTIVITY ICON
+   ORDER ICON
 ========================= */
 
-.activity-icon {
+.order-icon {
     width: 40px;
     height: 40px;
 
@@ -811,18 +771,17 @@ body {
     border-radius: 9px;
 
     font-size: 17px;
-    font-weight: bold;
 }
 
 
-.activity-icon.opened {
+.order-icon.opened {
     background: #eff6ff;
 
     color: #2563eb;
 }
 
 
-.activity-icon.closed {
+.order-icon.closed {
     background: #f0fdf4;
 
     color: #16a34a;
@@ -830,17 +789,17 @@ body {
 
 
 /* =========================
-   ACTIVITY INFORMATION
+   ORDER INFORMATION
 ========================= */
 
-.activity-info {
+.order-info {
     flex: 1;
 
     min-width: 0;
 }
 
 
-.activity-title {
+.order-title {
     display: flex;
 
     align-items: center;
@@ -849,19 +808,49 @@ body {
 }
 
 
-.activity-title strong {
+.order-title strong {
     font-size: 13px;
 
     color: #1f2937;
 }
 
 
-.activity-info p {
-    margin-top: 5px;
+.order-route {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+
+    margin-top: 6px;
 
     font-size: 10px;
+    color: #6b7280;
+}
 
-    color: #9ca3af;
+
+.order-route span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+
+.dot-blue {
+    background: #2563eb;
+}
+
+
+.dot-teal {
+    background: #16a085;
 }
 
 
@@ -894,19 +883,19 @@ body {
 
 
 /* =========================
-   TIME
+   ORDER TIME
 ========================= */
 
-.activity-time {
+.order-time {
     flex-shrink: 0;
 
-    width: 130px;
+    width: 100px;
 
     text-align: right;
 }
 
 
-.activity-time strong {
+.order-time strong {
     display: block;
 
     font-size: 11px;
@@ -915,7 +904,7 @@ body {
 }
 
 
-.activity-time span {
+.order-time span {
     display: block;
 
     margin-top: 4px;
@@ -954,7 +943,7 @@ footer {
 @media (max-width: 850px) {
 
     .summary {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
@@ -1084,39 +1073,34 @@ footer {
     }
 
 
-    .welcome h2 {
-        font-size: 23px;
+    .stat-card {
+        padding: 18px;
     }
 
 
-    .card {
+    .orders-header {
         padding: 20px;
     }
 
 
-    .activity-header {
-        padding: 20px;
-    }
-
-
-    .activity-item {
+    .order-item {
         padding: 15px;
 
         gap: 10px;
     }
 
 
-    .activity-info p {
+    .order-route {
         display: none;
     }
 
 
-    .activity-time {
+    .order-time {
         width: auto;
     }
 
 
-    .activity-time span {
+    .order-time span {
         display: none;
     }
 
