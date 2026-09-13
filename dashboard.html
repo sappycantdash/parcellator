@@ -71,17 +71,18 @@
 
                 <p class="nav-section-label">Manage</p>
 
-                <a href="#" class="nav-item">
+                <a href="#" class="nav-item" id="navCompartments">
                     <span class="nav-icon">◧</span>
                     <span>Compartments</span>
                 </a>
 
-                <a href="#" class="nav-item">
+                <a href="#" class="nav-item" id="navAlerts">
                     <span class="nav-icon">⚠</span>
                     <span>Alerts</span>
+                    <span class="nav-badge" id="alertsBadge">2</span>
                 </a>
 
-                <a href="#" class="nav-item">
+                <a href="#" class="nav-item" id="navSettings">
                     <span class="nav-icon">⚙</span>
                     <span>Settings</span>
                 </a>
@@ -494,6 +495,323 @@
 
 
                 <!-- =========================
+                     COMPARTMENTS SECTION (REPLACES MAIN VIEW)
+                ========================== -->
+
+                <section class="orders-card activity-section" id="compartmentsSection">
+
+                    <div class="orders-header">
+
+                        <div>
+                            <p class="label">SMART LOCKER</p>
+                            <h2>Compartments</h2>
+                            <p class="description">Live status of every parcel compartment in the unit.</p>
+                        </div>
+
+                        <span class="orders-filter">8 Compartments ▾</span>
+
+                    </div>
+
+                    <div class="compartments-grid">
+
+                        <div class="compartment-cell state-occupied">
+                            <div class="compartment-top">
+                                <span class="compartment-id">C1</span>
+                                <span class="compartment-status-dot"></span>
+                            </div>
+                            <div class="compartment-icon">📦</div>
+                            <p class="compartment-status">Occupied</p>
+                            <p class="compartment-meta">Small · #ORD-024</p>
+                            <p class="compartment-sub">Awaiting pickup</p>
+                        </div>
+
+                        <div class="compartment-cell state-empty">
+                            <div class="compartment-top">
+                                <span class="compartment-id">C2</span>
+                                <span class="compartment-status-dot"></span>
+                            </div>
+                            <div class="compartment-icon">◻</div>
+                            <p class="compartment-status">Empty</p>
+                            <p class="compartment-meta">Small</p>
+                            <p class="compartment-sub">Ready for use</p>
+                        </div>
+
+                        <div class="compartment-cell state-occupied">
+                            <div class="compartment-top">
+                                <span class="compartment-id">C3</span>
+                                <span class="compartment-status-dot"></span>
+                            </div>
+                            <div class="compartment-icon">📦</div>
+                            <p class="compartment-status">Occupied</p>
+                            <p class="compartment-meta">Medium · #ORD-023</p>
+                            <p class="compartment-sub">Awaiting pickup</p>
+                        </div>
+
+                        <div class="compartment-cell state-empty">
+                            <div class="compartment-top">
+                                <span class="compartment-id">C4</span>
+                                <span class="compartment-status-dot"></span>
+                            </div>
+                            <div class="compartment-icon">◻</div>
+                            <p class="compartment-status">Empty</p>
+                            <p class="compartment-meta">Medium</p>
+                            <p class="compartment-sub">Ready for use</p>
+                        </div>
+
+                        <div class="compartment-cell state-occupied">
+                            <div class="compartment-top">
+                                <span class="compartment-id">C5</span>
+                                <span class="compartment-status-dot"></span>
+                            </div>
+                            <div class="compartment-icon">📦</div>
+                            <p class="compartment-status">Occupied</p>
+                            <p class="compartment-meta">Large · #ORD-022</p>
+                            <p class="compartment-sub">Awaiting pickup</p>
+                        </div>
+
+                        <div class="compartment-cell state-empty">
+                            <div class="compartment-top">
+                                <span class="compartment-id">C6</span>
+                                <span class="compartment-status-dot"></span>
+                            </div>
+                            <div class="compartment-icon">◻</div>
+                            <p class="compartment-status">Empty</p>
+                            <p class="compartment-meta">Large</p>
+                            <p class="compartment-sub">Ready for use</p>
+                        </div>
+
+                        <div class="compartment-cell state-maintenance">
+                            <div class="compartment-top">
+                                <span class="compartment-id">C7</span>
+                                <span class="compartment-status-dot"></span>
+                            </div>
+                            <div class="compartment-icon">⚠</div>
+                            <p class="compartment-status">Maintenance</p>
+                            <p class="compartment-meta">Small</p>
+                            <p class="compartment-sub">Sensor check needed</p>
+                        </div>
+
+                        <div class="compartment-cell state-empty">
+                            <div class="compartment-top">
+                                <span class="compartment-id">C8</span>
+                                <span class="compartment-status-dot"></span>
+                            </div>
+                            <div class="compartment-icon">◻</div>
+                            <p class="compartment-status">Empty</p>
+                            <p class="compartment-meta">Medium</p>
+                            <p class="compartment-sub">Ready for use</p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================
+                     ALERTS SECTION (REPLACES MAIN VIEW)
+                ========================== -->
+
+                <section class="orders-card activity-section" id="alertsSection">
+
+                    <div class="orders-header">
+
+                        <div>
+                            <p class="label">SYSTEM ALERTS</p>
+                            <h2>Alerts</h2>
+                            <p class="description">Notifications about parcel activity and device health.</p>
+                        </div>
+
+                        <span class="orders-filter">All Alerts ▾</span>
+
+                    </div>
+
+                    <div class="alerts-list">
+
+                        <div class="alert-item severity-warning">
+                            <div class="alert-icon">⚠</div>
+                            <div class="alert-body">
+                                <div class="alert-title-row">
+                                    <strong>Compartment 7 sensor check needed</strong>
+                                    <span class="tag warning-tag">WARNING</span>
+                                </div>
+                                <p class="alert-message">Weight sensor in Compartment 7 reported inconsistent readings across the last 3 uses.</p>
+                                <span class="alert-time">2 hours ago</span>
+                            </div>
+                        </div>
+
+                        <div class="alert-item severity-info">
+                            <div class="alert-icon">ℹ</div>
+                            <div class="alert-body">
+                                <div class="alert-title-row">
+                                    <strong>New parcel detected</strong>
+                                    <span class="tag info-tag">INFO</span>
+                                </div>
+                                <p class="alert-message">Order #ORD-024 was placed into Compartment 1 and is awaiting pickup.</p>
+                                <span class="alert-time">Today, 04:31 PM</span>
+                            </div>
+                        </div>
+
+                        <div class="alert-item severity-resolved">
+                            <div class="alert-icon">✓</div>
+                            <div class="alert-body">
+                                <div class="alert-title-row">
+                                    <strong>Front door left open</strong>
+                                    <span class="tag closed-tag">RESOLVED</span>
+                                </div>
+                                <p class="alert-message">Front access door was open for over 5 minutes and has since auto-closed and locked.</p>
+                                <span class="alert-time">Yesterday, 08:12 PM</span>
+                            </div>
+                        </div>
+
+                        <div class="alert-item severity-info">
+                            <div class="alert-icon">ℹ</div>
+                            <div class="alert-body">
+                                <div class="alert-title-row">
+                                    <strong>Firmware updated</strong>
+                                    <span class="tag info-tag">INFO</span>
+                                </div>
+                                <p class="alert-message">System firmware updated to v2.4.1, improving weight calibration accuracy.</p>
+                                <span class="alert-time">Sep 10, 2026</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================
+                     SETTINGS SECTION (REPLACES MAIN VIEW)
+                ========================== -->
+
+                <section class="orders-card activity-section" id="settingsSection">
+
+                    <div class="orders-header">
+
+                        <div>
+                            <p class="label">PREFERENCES</p>
+                            <h2>Settings</h2>
+                            <p class="description">Configure notifications, security, and device behavior.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="settings-body">
+
+                        <div class="settings-group">
+
+                            <h3 class="settings-group-title">Notifications</h3>
+
+                            <div class="settings-row">
+                                <div class="settings-row-text">
+                                    <strong>Email Notifications</strong>
+                                    <span>Get an email when a parcel arrives or is taken inside.</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="settings-row">
+                                <div class="settings-row-text">
+                                    <strong>Push Notifications</strong>
+                                    <span>Show real-time alerts on this device.</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="settings-row">
+                                <div class="settings-row-text">
+                                    <strong>Sound Alerts</strong>
+                                    <span>Play a chime when a new parcel is detected.</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-group">
+
+                            <h3 class="settings-group-title">Security</h3>
+
+                            <div class="settings-row">
+                                <div class="settings-row-text">
+                                    <strong>Auto-lock Compartments</strong>
+                                    <span>Automatically lock a compartment once it's closed.</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="settings-row">
+                                <div class="settings-row-text">
+                                    <strong>Two-Factor Authentication</strong>
+                                    <span>Require a one-time code when logging in.</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="settings-row">
+                                <div class="settings-row-text">
+                                    <strong>Password</strong>
+                                    <span>Last changed on Aug 02, 2026.</span>
+                                </div>
+                                <button type="button" class="settings-btn">Change Password</button>
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-group">
+
+                            <h3 class="settings-group-title">Device</h3>
+
+                            <div class="settings-row">
+                                <div class="settings-row-text">
+                                    <strong>Weight Sensor Calibration</strong>
+                                    <span>Recalibrate the scale for more accurate readings.</span>
+                                </div>
+                                <button type="button" class="settings-btn">Calibrate Now</button>
+                            </div>
+
+                            <div class="settings-row">
+                                <div class="settings-row-text">
+                                    <strong>Firmware Version 2.4.1</strong>
+                                    <span>Your device is up to date.</span>
+                                </div>
+                                <button type="button" class="settings-btn">Check for Updates</button>
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-footer">
+                            <span class="settings-saved-toast" id="settingsSavedToast">Saved!</span>
+                            <button type="button" class="login-button settings-save-btn" id="settingsSaveBtn">SAVE CHANGES</button>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================
                      FOOTER
                 ========================== -->
 
@@ -569,51 +887,94 @@
         var navDashboard = document.getElementById("navDashboard");
         var navOrders = document.getElementById("navOrders");
         var navActivityLog = document.getElementById("navActivityLog");
+        var navCompartments = document.getElementById("navCompartments");
+        var navAlerts = document.getElementById("navAlerts");
+        var navSettings = document.getElementById("navSettings");
+
+        var allNavItems = [navDashboard, navOrders, navActivityLog, navCompartments, navAlerts, navSettings];
 
         var summarySection = document.getElementById("summarySection");
         var ordersSection = document.getElementById("ordersSection");
         var activityLogSection = document.getElementById("activityLogSection");
+        var compartmentsSection = document.getElementById("compartmentsSection");
+        var alertsSection = document.getElementById("alertsSection");
+        var settingsSection = document.getElementById("settingsSection");
+
+        var allSections = [summarySection, ordersSection, activityLogSection, compartmentsSection, alertsSection, settingsSection];
 
         var headerCategoryLabel = document.getElementById("headerCategoryLabel");
         var headerTitle = document.getElementById("headerTitle");
+        var mainContainer = document.querySelector(".container");
+
+        /* Small helper: fades the main content in each time the view changes */
+        function playViewTransition() {
+            mainContainer.classList.remove("view-enter");
+            void mainContainer.offsetWidth; /* force reflow so the animation can replay */
+            mainContainer.classList.add("view-enter");
+        }
+
+        function activateNav(activeItem) {
+            allNavItems.forEach(function (item) {
+                item.classList.remove("active");
+            });
+            activeItem.classList.add("active");
+        }
+
+        function setVisibleSections(visibleMap) {
+            allSections.forEach(function (section) {
+                section.style.display = "none";
+            });
+            Object.keys(visibleMap).forEach(function (id) {
+                document.getElementById(id).style.display = visibleMap[id];
+            });
+        }
 
         function showDashboardView() {
-            navDashboard.classList.add("active");
-            navOrders.classList.remove("active");
-            navActivityLog.classList.remove("active");
-
-            summarySection.style.display = "grid";
-            ordersSection.style.display = "block";
-            activityLogSection.style.display = "none";
-
+            activateNav(navDashboard);
+            setVisibleSections({ summarySection: "grid", ordersSection: "block" });
             headerCategoryLabel.textContent = "DASHBOARD";
             headerTitle.textContent = "Overview";
+            playViewTransition();
         }
 
         function showOrdersView() {
-            navDashboard.classList.remove("active");
-            navOrders.classList.add("active");
-            navActivityLog.classList.remove("active");
-
-            summarySection.style.display = "none";
-            ordersSection.style.display = "block";
-            activityLogSection.style.display = "none";
-
+            activateNav(navOrders);
+            setVisibleSections({ ordersSection: "block" });
             headerCategoryLabel.textContent = "ORDERS";
             headerTitle.textContent = "Parcel List";
+            playViewTransition();
         }
 
         function showActivityLogView() {
-            navDashboard.classList.remove("active");
-            navOrders.classList.remove("active");
-            navActivityLog.classList.add("active");
-
-            summarySection.style.display = "none";
-            ordersSection.style.display = "none";
-            activityLogSection.style.display = "block";
-
+            activateNav(navActivityLog);
+            setVisibleSections({ activityLogSection: "block" });
             headerCategoryLabel.textContent = "ACTIVITY LOG";
             headerTitle.textContent = "Parcel Pickup Times";
+            playViewTransition();
+        }
+
+        function showCompartmentsView() {
+            activateNav(navCompartments);
+            setVisibleSections({ compartmentsSection: "block" });
+            headerCategoryLabel.textContent = "COMPARTMENTS";
+            headerTitle.textContent = "Smart Locker Status";
+            playViewTransition();
+        }
+
+        function showAlertsView() {
+            activateNav(navAlerts);
+            setVisibleSections({ alertsSection: "block" });
+            headerCategoryLabel.textContent = "ALERTS";
+            headerTitle.textContent = "System Alerts";
+            playViewTransition();
+        }
+
+        function showSettingsView() {
+            activateNav(navSettings);
+            setVisibleSections({ settingsSection: "block" });
+            headerCategoryLabel.textContent = "SETTINGS";
+            headerTitle.textContent = "Preferences";
+            playViewTransition();
         }
 
         navDashboard.addEventListener("click", function (e) {
@@ -630,6 +991,34 @@
             e.preventDefault();
             showActivityLogView();
         });
+
+        navCompartments.addEventListener("click", function (e) {
+            e.preventDefault();
+            showCompartmentsView();
+        });
+
+        navAlerts.addEventListener("click", function (e) {
+            e.preventDefault();
+            showAlertsView();
+        });
+
+        navSettings.addEventListener("click", function (e) {
+            e.preventDefault();
+            showSettingsView();
+        });
+
+
+        /* SETTINGS - SAVE BUTTON TOAST */
+        var settingsSaveBtn = document.getElementById("settingsSaveBtn");
+        var settingsSavedToast = document.getElementById("settingsSavedToast");
+
+        if (settingsSaveBtn) {
+            settingsSaveBtn.addEventListener("click", function () {
+                settingsSavedToast.classList.remove("show");
+                void settingsSavedToast.offsetWidth;
+                settingsSavedToast.classList.add("show");
+            });
+        }
 
 
         /* MODAL LOGIC */
