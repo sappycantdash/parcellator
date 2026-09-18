@@ -108,6 +108,8 @@ LOGIN HEADING
 
 .login-heading {
 margin-bottom: 25px;
+text-align: center;
+
 }
 
 .login-label {
@@ -187,7 +189,7 @@ INPUTS
 .form-group input[type="text"],
 .form-group input[type="password"] {
 
-width: 100%;
+width: 400px;
 height: 44px;
 padding: 0 13px;
 background: #ffffff;
