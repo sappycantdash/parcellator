@@ -3,17 +3,55 @@ LOGIN PAGE
 ================================================== */
 
 :root {
---ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
---ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* PARCELLATOR COLORS */
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #60a5fa;
+
+    --text-dark: #111827;
+    --text: #475569;
+    --text-light: #94a3b8;
+
 }
 
 .login-page {
-min-height: 100vh;
-background: #f4f6f9;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 40px 20px;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    /* Main background */
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(59, 130, 246, 0.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(99, 102, 241, 0.13),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #f8fbff 0%,
+            #eef5ff 48%,
+            #f8f9ff 100%
+        );
 
 }
 
@@ -22,13 +60,26 @@ LOGIN CONTAINER
 ================================================== */
 
 .login-container {
-width: 100%;
-max-width: 430px;
-display: flex;
-flex-direction: column;
-align-items: center;
 
-animation: loginFadeIn 0.5s var(--ease-out-soft) both;
+    width: 100%;
+
+    max-width: 460px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation:
+        loginFadeIn
+        0.6s
+        var(--ease-out-soft)
+        both;
 
 }
 
@@ -48,21 +99,47 @@ LOGO
 ================================================== */
 
 .login-logo {
-width: 58px;
-height: 58px;
-display: flex;
-align-items: center;
-justify-content: center;
-background: #2563eb;
-color: #ffffff;
-border-radius: 13px;
-font-size: 27px;
-font-weight: bold;
-margin-bottom: 14px;
-box-shadow:
-    0 5px 15px rgba(37, 99, 235, 0.18);
+
+    width: 60px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #3b82f6,
+            #2563eb 55%,
+            #1d4ed8
+        );
+
+    color: #ffffff;
+
+    border-radius: 15px;
+
+    font-size: 27px;
+
+    font-weight: bold;
+
+    margin-bottom: 14px;
+
+    position: relative;
+
+    box-shadow:
+        0 12px 28px
+        rgba(37, 99, 235, 0.25),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.35);
 
 }
+
+
 
 /* ==================================================
 BRAND

@@ -38,11 +38,42 @@
 ========================= */
 
 body {
+
     font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f9;
+
     color: #1f2937;
+
     min-height: 100vh;
+
+    /* SAME BACKGROUND AS LOGIN PAGE */
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(59, 130, 246, 0.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(99, 102, 241, 0.13),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #f8fbff 0%,
+            #eef5ff 48%,
+            #f8f9ff 100%
+        );
+
+    background-attachment: fixed;
+
+    position: relative;
+
 }
+
+
+
+
+
 
 
 /* =========================
