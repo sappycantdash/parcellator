@@ -200,13 +200,21 @@
        LOGIN
        NO CREDENTIALS REQUIRED YET */
 
-    loginForm.addEventListener("submit", function (event) {
+   loginForm.addEventListener("submit", function (event) {
 
-        event.preventDefault();
+    event.preventDefault();
 
+    const btn = loginForm.querySelector(".login-button");
+    btn.textContent = "SIGNING IN...";
+    btn.disabled = true;
+
+    document.body.classList.add("leaving");
+
+    setTimeout(function () {
         window.location.href = "dashboard.html";
+    }, 700);
 
-    });
+});
 
 </script>
 
