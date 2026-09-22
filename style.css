@@ -416,3 +416,302 @@ MOBILE
 }
 
 }
+
+/* ==================================================
+   PARCEL TRACKING
+================================================== */
+
+.parcel-tracking {
+    width: 100%;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 25px;
+    margin-top: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+
+/* HEADER */
+
+.parcel-tracking .tracking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.parcel-tracking .tracking-label {
+    margin: 0 0 6px 0;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #2563eb;
+}
+
+.parcel-tracking .tracking-header h2 {
+    margin: 0 0 5px 0;
+    font-size: 21px;
+    color: #111827;
+}
+
+.parcel-tracking .tracking-header p {
+    margin: 0;
+    font-size: 11px;
+    color: #6b7280;
+}
+
+
+/* SEARCH */
+
+.parcel-tracking .tracking-search {
+    display: flex;
+    gap: 8px;
+}
+
+.parcel-tracking .tracking-search input {
+    width: 180px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    outline: none;
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #111827;
+}
+
+.parcel-tracking .tracking-search input::placeholder {
+    color: #9ca3af;
+}
+
+.parcel-tracking .tracking-search input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.parcel-tracking .tracking-search button {
+    height: 40px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.parcel-tracking .tracking-search button:hover {
+    background: #1d4ed8;
+}
+
+
+/* RESULT */
+
+.parcel-tracking .tracking-result {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+/* TOP */
+
+.parcel-tracking .tracking-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #f8fbff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.parcel-tracking .tracking-small {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #94a3b8;
+}
+
+.parcel-tracking .tracking-top h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #111827;
+}
+
+.parcel-tracking .tracking-status {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: #dbeafe;
+    color: #2563eb;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+/* INFORMATION */
+
+.parcel-tracking .tracking-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.parcel-tracking .tracking-info span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 9px;
+    color: #94a3b8;
+}
+
+.parcel-tracking .tracking-info strong {
+    font-size: 11px;
+    color: #374151;
+}
+
+
+/* TRACKING PROGRESS */
+
+.parcel-tracking .tracking-progress {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 25px;
+}
+
+.parcel-tracking .tracking-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 105px;
+    text-align: center;
+}
+
+.parcel-tracking .tracking-dot {
+    width: 28px;
+    height: 28px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    border: 2px solid #d1d5db;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #9ca3af;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.parcel-tracking .tracking-step strong {
+    font-size: 9px;
+    color: #6b7280;
+}
+
+.parcel-tracking .tracking-step span {
+    margin-top: 4px;
+    font-size: 8px;
+    color: #9ca3af;
+}
+
+.parcel-tracking .tracking-step.completed .tracking-dot,
+.parcel-tracking .tracking-step.active .tracking-dot {
+    border-color: #2563eb;
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.parcel-tracking .tracking-step.completed strong,
+.parcel-tracking .tracking-step.active strong {
+    color: #2563eb;
+}
+
+
+/* LINES */
+
+.parcel-tracking .tracking-line {
+    flex: 1;
+    height: 2px;
+    margin-top: 13px;
+    background: #e5e7eb;
+}
+
+.parcel-tracking .tracking-line.completed-line {
+    background: #2563eb;
+}
+
+
+/* LATEST UPDATE */
+
+.parcel-tracking .tracking-update {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 20px;
+    background: #f8fafc;
+    border-top: 1px solid #e5e7eb;
+}
+
+.parcel-tracking .update-label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #94a3b8;
+}
+
+.parcel-tracking .tracking-update strong {
+    font-size: 10px;
+    color: #374151;
+}
+
+.parcel-tracking .tracking-update > span {
+    font-size: 9px;
+    color: #94a3b8;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .parcel-tracking .tracking-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .parcel-tracking .tracking-search {
+        width: 100%;
+    }
+
+    .parcel-tracking .tracking-search input {
+        flex: 1;
+        width: auto;
+    }
+
+    .parcel-tracking .tracking-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .parcel-tracking .tracking-progress {
+        overflow-x: auto;
+    }
+
+}
+
