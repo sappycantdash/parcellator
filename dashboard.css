@@ -204,15 +204,19 @@ body {
 }
 
 .parcel-search button {
-    width: 60px;
+     width: 70px;
     height: 40px;
     padding: 0;
+    margin-left: 10px;
+    box-sizing: border-box;
+
     border: none;
     border-radius: 2px;
     background: #2563eb;
     color: white;
     font-weight: 600;
     cursor: pointer;
+
 }
 
 .parcel-search button:hover {
