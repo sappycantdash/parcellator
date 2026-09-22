@@ -191,12 +191,15 @@ body {
 }
 
 .parcel-search input {
-    flex: 1;
+   flex: 1;
     padding: 12px 14px;
+    margin-left: 10px;
+    margin-right: 10px;
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     font-size: 13px;
     outline: none;
+    box-sizing: border-box;
 }
 
 .parcel-search input:focus {
