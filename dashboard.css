@@ -206,7 +206,7 @@ body {
 .parcel-search button {
     padding: 10px 15px;
     border: none;
-    border-radius: 8px;
+    border-radius: 2px;
     background: #2563eb;
     color: white;
     font-weight: 600;
