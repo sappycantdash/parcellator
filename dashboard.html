@@ -71,11 +71,6 @@
 
                 <p class="nav-section-label">Manage</p>
 
-                <a href="#" class="nav-item" id="navCompartments">
-                    <span class="nav-icon">◧</span>
-                    <span>Compartments</span>
-                </a>
-
                 <a href="#" class="nav-item" id="navAlerts">
                     <span class="nav-icon">⚠</span>
                     <span>Alerts</span>
@@ -887,11 +882,10 @@
         var navDashboard = document.getElementById("navDashboard");
         var navOrders = document.getElementById("navOrders");
         var navActivityLog = document.getElementById("navActivityLog");
-        var navCompartments = document.getElementById("navCompartments");
         var navAlerts = document.getElementById("navAlerts");
         var navSettings = document.getElementById("navSettings");
 
-        var allNavItems = [navDashboard, navOrders, navActivityLog, navCompartments, navAlerts, navSettings];
+        var allNavItems = [navDashboard, navOrders, navActivityLog, navAlerts, navSettings];
 
         var summarySection = document.getElementById("summarySection");
         var ordersSection = document.getElementById("ordersSection");
@@ -954,7 +948,6 @@
         }
 
         function showCompartmentsView() {
-            activateNav(navCompartments);
             setVisibleSections({ compartmentsSection: "block" });
             headerCategoryLabel.textContent = "COMPARTMENTS";
             headerTitle.textContent = "Smart Locker Status";
@@ -990,11 +983,6 @@
         navActivityLog.addEventListener("click", function (e) {
             e.preventDefault();
             showActivityLogView();
-        });
-
-        navCompartments.addEventListener("click", function (e) {
-            e.preventDefault();
-            showCompartmentsView();
         });
 
         navAlerts.addEventListener("click", function (e) {
