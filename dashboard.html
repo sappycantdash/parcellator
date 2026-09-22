@@ -245,18 +245,31 @@
 
                     <div class="orders-header">
 
-                        <div>
-                            <p class="label">PARCEL ORDERS</p>
-                            <h2>Orders</h2>
-                            <p class="description">Upcoming and recent deliveries with price details.</p>
-                        </div>
+    <div>
+        <p class="label">PARCEL ORDERS</p>
+        <h2>Orders</h2>
+        <p class="description">
+            Upcoming and recent deliveries with price details.
+        </p>
+    </div>
 
-                        <span class="orders-filter">This week ▾</span>
+    <span class="orders-filter">This week ▾</span>
 
-                    </div>
+</div>
 
 
-                    <div class="orders-list">
+<!-- PARCEL SEARCH -->
+<div class="parcel-search">
+    <input 
+        type="text" 
+        id="parcelSearch" 
+        placeholder="Search parcel or order number..."
+    >
+    <button type="button" id="searchParcelBtn">Search</button>
+</div>
+
+
+<div class="orders-list">
 
 
                         <!-- Order 1 -->
@@ -1032,6 +1045,33 @@
             modal.classList.add("active");
         }
 
+        var parcelSearch = document.getElementById("parcelSearch");
+var searchParcelBtn = document.getElementById("searchParcelBtn");
+
+function searchParcels() {
+    var searchText = parcelSearch.value.toLowerCase().trim();
+    var orders = document.querySelectorAll(".order-item");
+
+    orders.forEach(function(order) {
+        var parcel = order.dataset.parcel.toLowerCase();
+        var item = order.dataset.item.toLowerCase();
+
+        if (
+            searchText === "" ||
+            parcel.includes(searchText) ||
+            item.includes(searchText)
+        ) {
+            order.style.display = "";
+        } else {
+            order.style.display = "none";
+        }
+    });
+}
+
+searchParcelBtn.addEventListener("click", searchParcels);
+
+parcelSearch.addEventListener("input", searchParcels);
+
         function closeModal() {
             modal.classList.remove("active");
         }
@@ -1060,6 +1100,9 @@
         document.addEventListener("keydown", function (e) {
             if (e.key === "Escape") closeModal();
         });
+
+
+        
 
     </script>
 
